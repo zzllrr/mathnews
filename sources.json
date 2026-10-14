@@ -1,0 +1,5708 @@
+[
+  {
+    "name": "IMU国际数学联盟新闻(单数月)",
+    "url": "https://www.mathunion.org/imu-news/archive",
+    "type": "html",
+    "tags": [
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".field-content",
+      "title": "",
+      "link": "",
+      "date": "a",
+      "author": ""
+    }
+  },
+  {
+    "name": "IPS国际统计学奖International Prize in Statistics",
+    "url": "https://statprize.org/previous-winners/",
+    "type": "html",
+    "tags": [
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".entry-content .wp-block-genesis-blocks-gb-columns",
+      "title": "h2",
+      "link": "a[data-id]",
+      "date": ".winneryear",
+      "author": ""
+    }
+  },
+  {
+    "name": "IEEE spectrum（AI主题）",
+    "url": "https://spectrum.ieee.org/topic/artificial-intelligence/",
+    "type": "html",
+    "tags": [
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": ".social-date",
+      "author": ".all-related-sections"
+    }
+  },
+  {
+    "name": "arXiv——Proceedings of the ICM 2026",
+    "url": "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=ICM+2026&terms-0-field=all&terms-1-operator=OR&terms-1-term=2026+International+Congress+of+Mathematicians&terms-1-field=title&classification-mathematics=y&classification-physics_archives=all&classification-include_cross_list=include&date-year=&date-filter_by=date_range&date-from_date=2025-01-01&date-to_date=&date-date_type=submitted_date&abstracts=show&size=200&order=-announced_date_first",
+    "type": "html",
+    "tags": [
+      "期刊文献"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".arxiv-result",
+      "title": ".title",
+      "link": "",
+      "date": ".abstract + p",
+      "author": ".authors"
+    }
+  },
+  {
+    "name": "ICIAM国际工业与应用数学",
+    "url": "https://iciam.org/news/archive",
+    "type": "html",
+    "tags": [
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "tbody tr",
+      "title": ".views-field-title a",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "ICTP国际理论物理中心",
+    "url": "https://www.ictp.it/math/news",
+    "type": "html",
+    "tags": [
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".view-news .views-row",
+      "title": ".views-field-title",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "ACM通讯",
+    "url": "https://cacm.acm.org/section/news/feed/",
+    "type": "rss",
+    "tags": [
+      "学会机构"
+    ]
+  },
+  {
+    "name": "arXiv (数学最新预印本)",
+    "url": "http://export.arxiv.org/rss/math",
+    "type": "rss",
+    "tags": [
+      "全球",
+      "期刊文献"
+    ],
+    "homepage": "https://arxiv.org/list/math/recent"
+  },
+  {
+    "name": "EMS欧洲数学会",
+    "url": "https://euromathsoc.org/news/feed/atom",
+    "type": "rss",
+    "tags": [
+      "欧洲",
+      "学会机构"
+    ],
+    "homepage": "https://euromathsoc.org/news"
+  },
+  {
+    "name": "ECWIS欧洲魏茨曼科学研究所委员会",
+    "url": "https://ecwis.org/weizmann-wonder-wander/",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".uk-card",
+      "title": "h3",
+      "link": "",
+      "date": ".el-meta",
+      "author": ""
+    }
+  },
+  {
+    "name": "ECWIS欧洲魏茨曼科学研究所委员会新闻2",
+    "url": "https://ecwis.org/news-media/",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".uk-card",
+      "title": "h2",
+      "link": "",
+      "date": ".el-content",
+      "author": ""
+    }
+  },
+  {
+    "name": "CIMPA国际数学纯粹与应用中心",
+    "url": "https://www.cimpa.info/en/news",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": ".dates",
+      "author": ""
+    }
+  },
+  {
+    "name": "MathTube——PIMS太平洋数学科学研究所",
+    "url": "https://mathtube.org/videotype",
+    "type": "html",
+    "tags": [
+      "科普媒体"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "tbody tr",
+      "title": "td a",
+      "link": "",
+      "date": ".date-display-single",
+      "author": ".views-field-field-speaker"
+    }
+  },
+  {
+    "name": "AMS美国数学会",
+    "url": "https://www.ams.org/cgi-bin/content/news_items.cgi?news_object=amsNews&search=&limit_count=10&days_old=730&expand=1&type=news&article_type=NONE",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsItemDiv",
+      "title": ".newsItemTitle",
+      "link": "a.text-primary",
+      "date": ".newsItemDate",
+      "author": ""
+    }
+  },
+  {
+    "name": "量子杂志Quanta Magazine (数学)",
+    "url": "https://www.quantamagazine.org/mathematics/feed/",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "科普媒体"
+    ]
+  },
+  {
+    "name": "陶哲轩博客 (What's new)",
+    "url": "https://terrytao.wordpress.com/feed/",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "数学家博客"
+    ]
+  },
+  {
+    "name": "SF西蒙斯基金会",
+    "url": "https://www.simonsfoundation.org/feed/",
+    "type": "rss",
+    "tags": [
+      "学会机构",
+      "美国"
+    ]
+  },
+  {
+    "name": "Math in the Media |Tony Phillips, Leila Sloman",
+    "url": "https://mathvoices.ams.org/mathmedia/feed/",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "UCLA-IPAM",
+    "url": "https://www.ipam.ucla.edu/feed/?post_type=news-and-research",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "学院"
+    ]
+  },
+  {
+    "name": "哈佛大学数学系",
+    "url": "https://www.math.harvard.edu/recent_news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article.post",
+      "title": "h3",
+      "link": "a",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UNL美国Nebraska-Lincoln内布拉斯加大学林肯分校数学系",
+    "url": "https://math.unl.edu/news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "h3 + div",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国New Hampshire新罕布什尔大学数学系",
+    "url": "https://ceps.unh.edu/mathematics-statistics",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UND美国North Dakota北达科他大学数学系",
+    "url": "https://arts-sciences.und.edu/academics/math/math-log.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Arkansas阿肯色大学数学系",
+    "url": "https://math.uark.edu",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#newsArchive li",
+      "title": "h3",
+      "link": "a",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Lehigh理海大学数学系",
+    "url": "https://math.cas.lehigh.edu/articles",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "a",
+      "date": ".article__date",
+      "author": ""
+    }
+  },
+  {
+    "name": "GMU乔治·梅森大学数学系",
+    "url": "https://science.gmu.edu/news?department=11",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "ND圣母大学数学系",
+    "url": "https://math.nd.edu/news.atom",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "homepage": "https://math.nd.edu/news/"
+  },
+  {
+    "name": "Rochester罗切斯特大学数学系",
+    "url": "https://math.gatech.edu/news-and-events",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ".section-title"
+    }
+  },
+  {
+    "name": "GaTech佐治亚Georgia理工学院数学系",
+    "url": "https://math.gatech.edu/news-and-events",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".view-content .mercury-item",
+      "title": ".mercury-item-title",
+      "link": "a",
+      "date": ".date-display-single",
+      "author": ""
+    }
+  },
+  {
+    "name": "JHU约翰·霍普金斯大学数学系",
+    "url": "https://mathematics.jhu.edu/about/archive/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": ".archive-post",
+      "date": "time.published",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Binghamton宾汉顿大学数学系",
+    "url": "https://www.binghamton.edu/math/about/news.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": ".title",
+      "link": "",
+      "date": ".short-post-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UT Dallas德克萨斯大学达拉斯分校数学系",
+    "url": "https://math.utdallas.edu/news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".story",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UT Austins德克萨斯大学奥斯汀分校数学系",
+    "url": "https://math.utexas.edu",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".story",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UNT北德克萨斯大学数学系",
+    "url": "https://math.unt.edu/index.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UMASS马萨诸塞大学Amherst阿默斯特分校数学系",
+    "url": "https://www.umass.edu/mathematics-statistics/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".teaser-item",
+      "title": ".text-md",
+      "link": "",
+      "date": ".pub-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "Amherst阿默斯特学院数学系",
+    "url": "https://www.amherst.edu/academiclife/departments/mathematics",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article.updates_callout_item",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ".updates_callout_item_flag"
+    }
+  },
+  {
+    "name": "CalTech加州理工数学系",
+    "url": "https://mathematics.caltech.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".article-teaser",
+      "title": ".article-teaser__title",
+      "link": "",
+      "date": ".article-teaser__published-date__date",
+      "author": ""
+    }
+  },
+  {
+    "name": "CalTech加州理工数学系（数学标签新闻）",
+    "url": "https://mathematics.caltech.edu/news?tag=mathematics",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".article-teaser",
+      "title": ".article-teaser__title",
+      "link": "",
+      "date": ".article-teaser__published-date__date",
+      "author": ""
+    }
+  },
+  {
+    "name": "MIT麻省理工",
+    "url": "https://math.mit.edu/news/archive/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "li.spotlight",
+      "title": "h4",
+      "link": "div a",
+      "date": ".click-open  span",
+      "author": ""
+    }
+  },
+  {
+    "name": "普林斯顿数学系",
+    "url": "https://www.math.princeton.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".view-content .views-row",
+      "title": ".news-card__title",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "SIAM美国工业与应用数学",
+    "url": "https://www.siam.org/publications/siam-news/",
+    "type": "html",
+    "tags": [
+      "学会机构",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article:has(.title)",
+      "title": ".title a",
+      "link": ".title a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "MI美国数学所",
+    "url": "https://mathinstitutes.org/highlights",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "div.card-body",
+      "title": "a",
+      "link": "a",
+      "date": ".highlight-info",
+      "author": ".highlight-institute"
+    }
+  },
+  {
+    "name": "SLMath",
+    "url": "https://www.slmath.org/api/news_and_announcements/public_news?per_page=6",
+    "type": "json",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "homepage": "https://www.slmath.org/news-and-events",
+    "method": "GET",
+    "rules": {
+      "item": "result",
+      "title": "title",
+      "link": "external_url",
+      "date": "updated_at",
+      "author": ""
+    }
+  },
+  {
+    "name": "UB美国纽约州立大学Buffalo布法罗分校数学系",
+    "url": "https://www.buffalo.edu/cas/math/news-events/news.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".list-style-teaser li",
+      "title": ".teaser-title",
+      "link": "",
+      "date": ".teaser-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "BU美国Boston波士顿大学数学系",
+    "url": "https://www.bu.edu/math/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list .snippet",
+      "title": "h3",
+      "link": "",
+      "date": ".snippet-meta",
+      "author": ""
+    }
+  },
+  {
+    "name": "MathSci.ai",
+    "url": "https://www.mathsci.ai/post/",
+    "type": "html",
+    "tags": [
+      "科普媒体",
+      "公司",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".universal-wrapper > div",
+      "title": "h2",
+      "link": "h2 a",
+      "date": "time",
+      "author": ".article-tags"
+    }
+  },
+  {
+    "name": "布朗大学数学系",
+    "url": "https://mathematics.brown.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".component_content_group",
+      "title": "h3",
+      "link": "h3 a",
+      "date": "time",
+      "author": ".component_label_source"
+    }
+  },
+  {
+    "name": "布朗大学应数",
+    "url": "https://appliedmath.brown.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news",
+      "title": "h3",
+      "link": "h3 a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国匹兹堡大学数学系",
+    "url": "https://appliedmath.brown.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "USF旧金山大学数学系",
+    "url": "https://www.usfca.edu/newsroom?field_topics=426",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "section",
+      "title": "h3",
+      "link": "",
+      "date": ".date-display-single",
+      "author": ".f--date-string"
+    }
+  },
+  {
+    "name": "美国Central Oklahoma中央俄克拉荷马大学数学系",
+    "url": "https://www.uco.edu/cms/academics/math-stats/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UCB加州大学伯克利（Berkeley）分校",
+    "url": "https://math.berkeley.edu/news-archive",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": ".views-field-title",
+      "link": ".views-field-title a",
+      "date": "prev: .date-display-single",
+      "author": ".views-field-field-openberkeley-news-source em"
+    }
+  },
+  {
+    "name": "UCLA加州大学洛杉矶分校",
+    "url": "https://ww3.math.ucla.edu/news-events/news-2/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": ".views-field-title a",
+      "date": ".elementor-post-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UC Merced加州大学默塞德分校应用数学系",
+    "url": "https://appliedmath.ucmerced.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h2",
+      "link": "",
+      "date": ".date-display-single",
+      "author": ""
+    }
+  },
+  {
+    "name": "UCSD加州大学圣迭戈分校",
+    "url": "https://math.ucsd.edu/news-events/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h4",
+      "link": "",
+      "date": ".text-black-50",
+      "author": "h4 + p"
+    }
+  },
+  {
+    "name": "UCSB加州大学圣芭芭拉分校",
+    "url": "https://www.math.ucsb.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".field li, .views-row",
+      "title": "h2,a",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Colorado科罗拉多大学数学系",
+    "url": "https://www.colorado.edu/math/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": ".ucb-article-card-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Kansas堪萨斯大学数学系",
+    "url": "https://www.colorado.edu/math/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".ku-news-list__article",
+      "title": "h3",
+      "link": "",
+      "date": ".ku-news-list__date",
+      "author": ""
+    }
+  },
+  {
+    "name": "AxiomMath.ai",
+    "url": "https://axiom-backend-0w7x.onrender.com/api/axiom-blogs?populate%5B0%5D=featured_image&populate%5B1%5D=editors&populate%5B2%5D=editors.picture&populate%5B3%5D=components&populate%5B4%5D=components.media&populate%5B5%5D=components.htmlSource&populate%5B6%5D=components.html_source&populate%5B7%5D=section&populate%5B8%5D=section.service&populate%5B9%5D=section.service.service&populate%5B10%5D=section.service.service.button&publicationState=live",
+    "type": "json",
+    "tags": [
+      "AI",
+      "公司",
+      "美国"
+    ],
+    "homepage": "https://axiommath.ai/territory",
+    "method": "GET",
+    "rules": {
+      "item": "data",
+      "title": "excerpt",
+      "link": "https://axiommath.ai/territory/ + slug",
+      "date": "updatedAt",
+      "author": "author"
+    }
+  },
+  {
+    "name": "Gil Kalai（Combinatorics and more）",
+    "url": "https://gilkalai.wordpress.com/feed/",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "James Propp（monthly writings in and around math）",
+    "url": "https://mathenchant.wordpress.com/feed/",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "AMS美国数学会博客Feature Column",
+    "url": "https://mathvoices.ams.org/featurecolumn/feed/",
+    "type": "rss",
+    "tags": [
+      "科普媒体",
+      "美国"
+    ]
+  },
+  {
+    "name": "Leonardo de Moura",
+    "url": "https://leodemoura.github.io/feed.xml",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国",
+      "形式化"
+    ]
+  },
+  {
+    "name": "Stacks Project Blog（哥伦比亚大学）",
+    "url": "https://www.math.columbia.edu/~dejong/wordpress/?feed=rss2",
+    "type": "rss",
+    "tags": [
+      "形式化",
+      "美国"
+    ]
+  },
+  {
+    "name": "Clay克莱数学研究所",
+    "url": "https://www.claymath.org/news/",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".tile",
+      "title": "h3",
+      "link": "a",
+      "date": ".meta-tag",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Syracuse雪城大学数学系",
+    "url": "https://artsandsciences.syracuse.edu/mathematics/news/",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".homenewscard",
+      "title": ".homenewscard_content_title",
+      "link": "a",
+      "date": ".homenewscard_date",
+      "author": ""
+    }
+  },
+  {
+    "name": "华盛顿大学数学系",
+    "url": "https://math.washington.edu/news/recent",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h2",
+      "link": "a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "华盛顿州立大学数学系",
+    "url": "https://math.wsu.edu/news-and-achievements/",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "WashU圣路易斯St. Louis华盛顿大学数学系",
+    "url": "https://math.washington.edu/news/recent",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "a",
+      "date": ".meta",
+      "author": ""
+    }
+  },
+  {
+    "name": "George Washington乔治华盛顿大学数学系",
+    "url": "https://math.columbian.gwu.edu/story-archive",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": ".gw-view-article-title",
+      "link": "a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "Georgetown乔治城大学数学系",
+    "url": "https://mathstat.georgetown.edu/category/news/",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post-summary",
+      "title": "h2",
+      "link": "a",
+      "date": ".post-summary-date",
+      "author": ".post-terms-list"
+    }
+  },
+  {
+    "name": "UNC美国North Carolina北卡罗来纳大学Chapel Hill教堂山分校数学系",
+    "url": "https://math.unc.edu/home/news/",
+    "type": "html",
+    "tags": [
+      "学院",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".col-sm-4",
+      "title": "h4",
+      "link": "a",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "IAS普林斯顿高等研究院",
+    "url": "https://www.ias.edu/news?type=news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "h2 a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "Duke杜克大学数学系",
+    "url": "https://math.duke.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".view-content article",
+      "title": ".h4",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Tufts塔夫茨大学数学系",
+    "url": "https://math.tufts.edu/news-events/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Indiana印第安纳大学数学系",
+    "url": "https://math.indiana.edu/news-events/news/index.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h1",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国威斯康星大学麦迪逊分校数学系",
+    "url": "https://www.math.wisc.edu/?post_type=post",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#main article",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "Yale耶鲁大学数学系",
+    "url": "https://math.yale.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card-collection__cards li",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Arizona亚利桑那大学数学系",
+    "url": "https://www.math.arizona.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".media-list-row",
+      "title": "h2",
+      "link": "",
+      "date": ".field--type-datetime",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国哥伦比亚大学数学系",
+    "url": "https://www.math.columbia.edu/category/announcements/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post_title",
+      "title": "a",
+      "link": "",
+      "date": "next: .post_byline",
+      "author": "next: .post_byline a"
+    }
+  },
+  {
+    "name": "美国西北大学数学系",
+    "url": "https://www.math.northwestern.edu/about/news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".page",
+      "title": "h4",
+      "link": "a",
+      "date": "h4 ~ * strong",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国西北大学",
+    "url": "https://news.northwestern.edu/feeds/allStories",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "学院"
+    ]
+  },
+  {
+    "name": "美国Rutgers罗格斯大学数学系",
+    "url": "https://www.math.rutgers.edu/news-events/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsinfo",
+      "title": ".newstitle ",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "TAMU德克萨斯农工（A&M）大学",
+    "url": "https://artsci.tamu.edu/news-data.json",
+    "type": "json",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "root | tags=Mathematics",
+      "title": "title",
+      "link": "link",
+      "date": "date",
+      "author": ""
+    }
+  },
+  {
+    "name": "Florida佛罗里达数学系",
+    "url": "https://math.ufl.edu",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-col",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "南佛罗里达数学系",
+    "url": "https://www.usf.edu/arts-sciences/departments/mathematics-statistics/news/listing.aspx",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsItem",
+      "title": "h2",
+      "link": "",
+      "date": ".newsItem_date",
+      "author": ".newsItem_category"
+    }
+  },
+  {
+    "name": "Stony Brook石溪大学",
+    "url": "https://math.stonybrook.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".unformattednewslist",
+      "title": ".views-field-field-link h5",
+      "link": "h5 a",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "NYU纽约大学库朗Courant研究所Math",
+    "url": "https://math.nyu.edu/dynamic/news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".events li",
+      "title": "h3",
+      "link": "",
+      "date": ".event-speaker em",
+      "author": ""
+    }
+  },
+  {
+    "name": "纽约库朗Courant研究所CIMS",
+    "url": "https://cims.nyu.edu/dynamic/news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news li",
+      "title": "h2",
+      "link": "",
+      "date": ".event-speaker em",
+      "author": ""
+    }
+  },
+  {
+    "name": "IAState美国爱荷华Iowa州立大学数学系",
+    "url": "https://math.iastate.edu/category/news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".tease-post",
+      "title": "a",
+      "link": "",
+      "date": ".iastate22-card__content-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UMD马里兰大学（College Park主校）数学系",
+    "url": "https://www-math.umd.edu",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".sprocket-strips-s-container li",
+      "title": "h4",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "USC南加州大学数学系",
+    "url": "https://dornsife.usc.edu/mathematics/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UMN明尼苏达Minnesota大学数学系",
+    "url": "https://cse.umn.edu/math/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-article",
+      "title": "h2",
+      "link": "h2 a",
+      "date": "time",
+      "author": ".news-category"
+    }
+  },
+  {
+    "name": "CMU卡耐基梅隆大学数学系",
+    "url": "https://www.cmu.edu/math/news-events/index.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#news > div",
+      "title": "h2",
+      "link": "",
+      "date": "small",
+      "author": ""
+    }
+  },
+  {
+    "name": "Purdue普渡大学数学系",
+    "url": "https://www.math.purdue.edu/news/index.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".panel-body > p",
+      "title": "a",
+      "link": "",
+      "date": "after: a",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Virginia弗吉尼亚大学数学系",
+    "url": "https://math.msu.edu/News/index.aspx",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".my-bordered-news-snippet",
+      "title": "h2",
+      "link": "",
+      "date": "h6",
+      "author": ""
+    }
+  },
+  {
+    "name": "Umich密歇根大学数学系",
+    "url": "https://lsa.umich.edu/math/news-events/all-news.news.xml",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "学院"
+    ]
+  },
+  {
+    "name": "MSU密歇根州立大学",
+    "url": "https://math.msu.edu/News/index.aspx",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsListing__item",
+      "title": ".title",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UConn美国康涅狄格大学",
+    "url": "https://math.uconn.edu/category/news/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h1",
+      "link": "",
+      "date": "time",
+      "author": ".author "
+    }
+  },
+  {
+    "name": "PSU美国Penn State宾夕法尼亚州立大学数学系",
+    "url": "https://science.psu.edu/news?department=15&type=All",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": ".story-grid-title",
+      "link": "",
+      "date": "",
+      "author": ".views-field-field-story-category"
+    }
+  },
+  {
+    "name": "UPenn美国宾夕法尼亚大学数学系",
+    "url": "https://www.math.upenn.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#main-content li",
+      "title": "h2",
+      "link": "",
+      "date": ".dateline",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Villanova维拉诺瓦大学数学系",
+    "url": "https://www.villanova.edu/university/liberal-arts-sciences/programs/mathematics-statistics.html",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国芝加哥大学数学系",
+    "url": "https://mathematics.uchicago.edu",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#news .flex-item",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UIUC伊利诺伊大学厄巴纳-香槟分校数学系",
+    "url": "https://math.illinois.edu/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".field-content",
+      "title": ".news-title",
+      "link": "",
+      "date": ".news-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UCI加州大学尔湾分校数学系",
+    "url": "https://www.math.uci.edu/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".view-id-News .views-row",
+      "title": ".views-field-title",
+      "link": "",
+      "date": ".date-display-single",
+      "author": ""
+    }
+  },
+  {
+    "name": "美国Oregon俄勒冈大学数学系",
+    "url": "https://naturalsciences.uoregon.edu/mathematics/contact-us/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card",
+      "title": ".card__title",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "OSU美国Oregon俄勒冈州立大学数学系",
+    "url": "https://math.oregonstate.edu/impact",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card-body",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ".stories__categories"
+    }
+  },
+  {
+    "name": "OSU美国Ohio俄亥俄州立大学数学系",
+    "url": "https://math.osu.edu/rss.xml",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "学院"
+    ]
+  },
+  {
+    "name": "UC Davis加州大学戴维斯分校数学系",
+    "url": "https://www.math.ucdavis.edu/research/news",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news_item",
+      "title": ".news_title",
+      "link": ".news_link",
+      "date": ".news_date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UC Irvine加州大学尔湾分校数学系",
+    "url": "https://www.math.uci.edu",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#block-views-news-block-2 .views-row",
+      "title": ".views-field-title",
+      "link": "",
+      "date": ".date-display-single",
+      "author": ""
+    }
+  },
+  {
+    "name": "UCR加州大学Riverside河滨分校数学系",
+    "url": "https://mathdept.ucr.edu",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UCSC加州大学Santa Cruz圣克鲁兹分校数学系",
+    "url": "https://math.ucsc.edu/newsposts/",
+    "type": "html",
+    "tags": [
+      "美国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "li.category-newsposts",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "CMS中国数学会",
+    "url": "https://www.cms.org.cn/index.php/Home/news/news.html",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsPage .dec",
+      "title": "h4",
+      "link": "a",
+      "date": ".day",
+      "author": ""
+    }
+  },
+  {
+    "name": "BICMR北京国际数学研究中心",
+    "url": "https://bicmr.pku.edu.cn/cn/content/category/3.html",
+    "type": "html",
+    "tags": [
+      "学院",
+      "中国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list li",
+      "title": "div",
+      "link": "",
+      "date": "span",
+      "author": ""
+    }
+  },
+  {
+    "name": "BIMSR北京雁栖湖应用数学研究院",
+    "url": "https://www.bimsa.cn/zh-CN/news/newslist/page_1.html",
+    "type": "html",
+    "tags": [
+      "学院",
+      "中国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".m-1",
+      "title": "h2 a",
+      "link": "",
+      "date": ".mb-2",
+      "author": ""
+    }
+  },
+  {
+    "name": "哈工大数院",
+    "url": "https://math.hit.edu.cn/10231/list.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#wp_news_w6 td",
+      "title": "a",
+      "link": "",
+      "date": "span",
+      "author": ""
+    }
+  },
+  {
+    "name": "南大数院",
+    "url": "https://math.nju.edu.cn/sy/yxxw/index.html",
+    "type": "html",
+    "tags": [
+      "学院",
+      "中国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#ajaxpage-list li",
+      "title": ".title",
+      "link": "",
+      "date": ".time",
+      "author": ""
+    }
+  },
+  {
+    "name": "CAS中科院数学所",
+    "url": "https://www.math.ac.cn/xwdt/",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".item",
+      "title": ".title",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "NCTS台湾理论科学研究中心数学组",
+    "url": "https://ncts.ntu.edu.tw/news.php",
+    "type": "html",
+    "tags": [
+      "学院",
+      "中国台湾"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "body > table > table > table > table > table > table > table",
+      "title": ".newsTitle2",
+      "link": "a",
+      "date": ".newsDate",
+      "author": ""
+    }
+  },
+  {
+    "name": "清华大学数学科学系",
+    "url": "https://www.math.tsinghua.edu.cn/xwgg.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".main li",
+      "title": ".title",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "中科院数学所",
+    "url": "https://www.math.ac.cn/xwdt/",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "li.item",
+      "title": ".title",
+      "link": "a",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "中科院数学与系统科学研究院AMSS-CAS",
+    "url": "http://www.amss.ac.cn/zhxw/XW2026/",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#content li",
+      "title": ".box-title",
+      "link": "",
+      "date": ".box-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "浙大数学院",
+    "url": "http://www.math.zju.edu.cn/38119/list.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#wp_news_w12 li",
+      "title": ".title",
+      "link": ".info a ",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "北大数院",
+    "url": "https://math.pku.edu.cn/xyxw/index.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".subNewsList li",
+      "title": "h3",
+      "link": "a",
+      "date": "span",
+      "author": ""
+    }
+  },
+  {
+    "name": "清华大学丘成桐中心YMSC",
+    "url": "https://ymsc.tsinghua.edu.cn/zxdt/xwdt.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "div.item_news_main",
+      "title": "h2",
+      "link": "h2 a",
+      "date": ".time_icon",
+      "author": ""
+    }
+  },
+  {
+    "name": "上海交大数院",
+    "url": "https://www.math.sjtu.edu.cn/Default/news",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".notice-list li",
+      "title": "before: .date",
+      "link": "a",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "复旦数院",
+    "url": "https://math.fudan.edu.cn/xyxw_52391/list.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "li.news",
+      "title": ".news_title",
+      "link": ".news_title a",
+      "date": ".news_time",
+      "author": ""
+    }
+  },
+  {
+    "name": "浙大高等研究院",
+    "url": "http://www.iasm.zju.edu.cn/news/list.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "tbody tr",
+      "title": ".title",
+      "link": "a",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "南开陈省身数学所",
+    "url": "http://www.cim.nankai.edu.cn/6601/list.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".wp_article_list li",
+      "title": ".Article_Title",
+      "link": "",
+      "date": ".Article_PublishDate",
+      "author": ""
+    }
+  },
+  {
+    "name": "中研院数学所（台北）",
+    "url": "https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/pages/118",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".articles-list article",
+      "title": ".article-title",
+      "link": "",
+      "date": ".time",
+      "author": ""
+    }
+  },
+  {
+    "name": "苏州大学数学院",
+    "url": "https://sxkxxy.usts.edu.cn/index/xyxw.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".channel-article-list li",
+      "title": "h3",
+      "link": "",
+      "date": "time -> datetime",
+      "author": ""
+    }
+  },
+  {
+    "name": "HKUST香港大学数学系",
+    "url": "https://www.math.hkust.edu.hk/news/",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "h4",
+      "title": "h4",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "HKU香港大学数学系",
+    "url": "https://hkumath.hku.hk/web/news/news.php",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#ul1 li",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "CUHK香港中文大学数学系",
+    "url": "https://www.math.hkust.edu.hk/news/",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".item-list li",
+      "title": "h4",
+      "link": "",
+      "date": ".media-object",
+      "author": ""
+    }
+  },
+  {
+    "name": "清华大学求真书院",
+    "url": "https://qzc.tsinghua.edu.cn/xwdt/zhxw.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newslist li",
+      "title": "h3",
+      "link": "",
+      "date": ".newslistitem_Time",
+      "author": ""
+    }
+  },
+  {
+    "name": "CAS-MCM中国科学院晨兴数学中心",
+    "url": "http://www.mcm.ac.cn/news/",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".graphiclist li",
+      "title": "h2",
+      "link": "h2 a",
+      "date": "h2 + span",
+      "author": ""
+    }
+  },
+  {
+    "name": "浙江大学数学高等研究院",
+    "url": "http://www.iasm.zju.edu.cn/news/list.htm",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".list-img li",
+      "title": ".title",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "CityU HK香港城市大学",
+    "url": "https://www.cityu.edu.hk/media/press-release",
+    "type": "html",
+    "tags": [
+      "中国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".view-content .views-row",
+      "title": ".views-field-title",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Kobe神户大学",
+    "url": "https://www.math.kobe-u.ac.jp/index-j.html",
+    "type": "html",
+    "tags": [
+      "日本",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Hiroshima广岛大学",
+    "url": "https://www.math.sci.hiroshima-u.ac.jp/index-j.html",
+    "type": "html",
+    "tags": [
+      "日本",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Keio庆应义塾大学",
+    "url": "https://www.keio.ac.jp/ja/st/department/math/",
+    "type": "html",
+    "tags": [
+      "日本",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "RIMS日本京都大学数理解析研究所",
+    "url": "https://www.kurims.kyoto-u.ac.jp/ja/info-01.html",
+    "type": "html",
+    "tags": [
+      "日本",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "p.data-01",
+      "title": "a",
+      "link": "",
+      "date": "prev:",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Kyoto京都大学数学系",
+    "url": "https://www.math.kyoto-u.ac.jp/en/news-and-topics",
+    "type": "html",
+    "tags": [
+      "日本",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".item-list li",
+      "title": "a",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Waseda早稻田大学",
+    "url": "https://www.fse.sci.waseda.ac.jp/news/",
+    "type": "html",
+    "tags": [
+      "日本",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Osaka大阪大学数学系",
+    "url": "http://www.math.sci.osaka-u.ac.jp/oshirase.html",
+    "type": "html",
+    "tags": [
+      "日本",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "dl a",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Tokyo东京大学数学系",
+    "url": "https://www.ms.u-tokyo.ac.jp/news_e/index_e.html",
+    "type": "html",
+    "tags": [
+      "学院",
+      "日本"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news li",
+      "title": "a",
+      "link": "a",
+      "date": ":after a",
+      "author": ".newsdate img -> alt"
+    }
+  },
+  {
+    "name": "日本Tohoku东北大学数学所",
+    "url": "http://www.math.tohoku.ac.jp/english/news/news-e.html",
+    "type": "html",
+    "tags": [
+      "学院",
+      "日本"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article .tb-spacing",
+      "title": "h2",
+      "link": "a",
+      "date": ":after .news-tag",
+      "author": ".news-tag"
+    }
+  },
+  {
+    "name": "日本Tokyo University of Science东京科学（理科）大学数学系",
+    "url": "https://educ.titech.ac.jp/math/eng/news/rss.xml",
+    "type": "rss",
+    "tags": [
+      "学院",
+      "日本"
+    ],
+    "homepage": "https://educ.titech.ac.jp/math/eng/news/"
+  },
+  {
+    "name": "日本名古屋大学数学系",
+    "url": "https://www.math.nagoya-u.ac.jp/en/update/index.html",
+    "type": "html",
+    "tags": [
+      "学院",
+      "日本"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".calendar-en tr",
+      "title": "td",
+      "link": "a",
+      "date": ".day",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本Tsukuba筑波大学数学系",
+    "url": "https://program.math.tsukuba.ac.jp/publications/",
+    "type": "html",
+    "tags": [
+      "学院",
+      "日本"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "日本京都奖kyotoprize.org",
+    "url": "https://www.kyotoprize.org/en/news",
+    "type": "html",
+    "tags": [
+      "学会机构",
+      "日本"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".article-list li",
+      "title": "h3",
+      "link": "a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "SMS|SMG瑞士数学会",
+    "url": "https://math.ch",
+    "type": "html",
+    "tags": [
+      "学会机构",
+      "瑞士",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "[summary=News] tr:has(td)",
+      "title": "td:has(i) ",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "瑞士ETH Zürich苏黎世联邦理工学院",
+    "url": "https://eth-its.ethz.ch/news.html",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "瑞士",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsListBox",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": "time+a"
+    }
+  },
+  {
+    "name": "瑞士ETH Zürich苏黎世联邦理工学院数学系",
+    "url": "https://math.ethz.ch/news-and-events/news/awards-and-honours.html",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "瑞士",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsListBox",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ".TagCloud__item a"
+    }
+  },
+  {
+    "name": "瑞士Geneve日内瓦大学",
+    "url": "https://www.unige.ch/math/GEM/couverture-de-presse",
+    "type": "html",
+    "tags": [
+      "学院",
+      "欧洲",
+      "瑞士"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".col-sm-9 p",
+      "title": "p strong",
+      "link": "p a",
+      "date": "before: p a",
+      "author": "p a"
+    }
+  },
+  {
+    "name": "瑞士Basel巴塞尔大学数学系",
+    "url": "https://dmi.unibas.ch/en/news-events/986/feed.rss",
+    "type": "rss",
+    "tags": [
+      "瑞士",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://dmi.unibas.ch/en/news-events/"
+  },
+  {
+    "name": "瑞士Bern伯恩大学数学系",
+    "url": "https://www.math.unibe.ch/index_eng.html",
+    "type": "html",
+    "tags": [
+      "瑞士",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".mdl-teaser_container_pinboard__teaser",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "瑞士Fribourg弗里堡大学数学系",
+    "url": "https://www.unifr.ch/math/en/info/agenda/",
+    "type": "html",
+    "tags": [
+      "瑞士",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".panel",
+      "title": ".link",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "瑞士EPFL洛桑联邦理工学院",
+    "url": "https://actu.epfl.ch/search/mathematics/",
+    "type": "html",
+    "tags": [
+      "瑞士",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card-body,.list-group > div",
+      "title": ".card-title,.h5",
+      "link": "",
+      "date": "time",
+      "author": "[itemprop=about]+span"
+    }
+  },
+  {
+    "name": "瑞士EPFL洛桑联邦理工学院（获奖）",
+    "url": "https://actu.epfl.ch/search/research_awards/",
+    "type": "html",
+    "tags": [
+      "瑞士",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card-body,.list-group > div",
+      "title": ".card-title,.h5",
+      "link": "",
+      "date": "time",
+      "author": "[itemprop=about]+span"
+    }
+  },
+  {
+    "name": "瑞士Neuchatel纳沙泰尔大学数学系",
+    "url": "https://www.unine.ch/math/actualites/",
+    "type": "html",
+    "tags": [
+      "瑞士",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".unine-post-grid__item",
+      "title": "h3",
+      "link": "",
+      "date": "h5",
+      "author": ""
+    }
+  },
+  {
+    "name": "新西兰Auckland奥克兰大学数学系",
+    "url": "https://www.auckland.ac.nz/en/science/about-the-faculty/department-of-mathematics.html",
+    "type": "html",
+    "tags": [
+      "新西兰",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "新西兰Wellington Victoria惠灵顿维多利亚大学数学系",
+    "url": "https://www.wgtn.ac.nz/sms",
+    "type": "html",
+    "tags": [
+      "新西兰",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "澳大利亚Melbourne墨尔本大学数学系",
+    "url": "https://ms.unimelb.edu.au/about/news-and-events",
+    "type": "html",
+    "tags": [
+      "澳大利亚",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news",
+      "title": "strong",
+      "link": "",
+      "date": "time",
+      "author": ".meta-right"
+    }
+  },
+  {
+    "name": "澳大利亚Wollongong伍伦贡大学数学系",
+    "url": "https://www.uow.edu.au/media/rss/index.php",
+    "type": "rss",
+    "tags": [
+      "澳大利亚",
+      "学院"
+    ],
+    "homepage": "https://www.uow.edu.au/media/?keyword=maths"
+  },
+  {
+    "name": "澳大利亚Macquarie麦考瑞大学数学系",
+    "url": "https://www.mq.edu.au/faculty-of-science-and-engineering/departments-and-schools/school-of-mathematical-and-physical-sciences/news-and-events",
+    "type": "html",
+    "tags": [
+      "澳大利亚",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "mq-card-horizontal",
+      "title": "h1",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UWA西澳大学数学系",
+    "url": "https://www.uwa.edu.au/schools/physics-mathematics-computing/mathematics-and-stats",
+    "type": "html",
+    "tags": [
+      "澳大利亚",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "澳大利亚Queensland昆士兰大学数学系",
+    "url": "https://smp.uq.edu.au/news",
+    "type": "html",
+    "tags": [
+      "澳大利亚",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": ".date-display-single",
+      "author": ""
+    }
+  },
+  {
+    "name": "澳大利亚Adelaide阿德莱德大学数学系",
+    "url": "https://adelaide.edu.au/about/news/?category=adelaideuniversity%3Anews%2Fscience",
+    "type": "html",
+    "tags": [
+      "澳大利亚",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".listing__data-container",
+      "title": "h3",
+      "link": "",
+      "date": ".cmp-teaser__pretitle",
+      "author": ""
+    }
+  },
+  {
+    "name": "澳大利亚Usyd悉尼大学数学系",
+    "url": "https://www.maths.usyd.edu.au/u/About/news.html",
+    "type": "html",
+    "tags": [
+      "学院",
+      "澳大利亚"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#w4 h2",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UTS澳大利亚悉尼科技大学数学系",
+    "url": "https://www.uts.edu.au/news/all-news",
+    "type": "html",
+    "tags": [
+      "学院",
+      "澳大利亚"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "澳大利亚Monash蒙纳士大学数学系",
+    "url": "https://www.monash.edu/science/news-events/news?f.News+categories%7C2=mathematics",
+    "type": "html",
+    "tags": [
+      "学院",
+      "澳大利亚"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".box-listing-element__wrapper",
+      "title": "h3",
+      "link": "",
+      "date": ".news-search-published-date",
+      "author": ".box-listing-element__category-link"
+    }
+  },
+  {
+    "name": "SMF法国数学会",
+    "url": "https://smf.emath.fr/actualites",
+    "type": "html",
+    "tags": [
+      "法国",
+      "学会机构",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h2",
+      "link": "",
+      "date": ".node_teaser__new_event-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "ENS Lyon里昂高师学院",
+    "url": "https://www.ens-lyon.fr/en/news",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h4",
+      "link": "h4 a + a",
+      "date": ".portletItemDetails",
+      "author": ".type-article a"
+    }
+  },
+  {
+    "name": "Sorbonne索邦大学",
+    "url": "https://sciences.sorbonne-universite.fr/flux-rss-sciences",
+    "type": "rss",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ]
+  },
+  {
+    "name": "ENS Paris巴黎高师学院",
+    "url": "https://www.math.ens.psl.eu/actualites/",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".edgt-bli-content",
+      "title": "h4",
+      "link": "",
+      "date": ".entry-date a",
+      "author": ""
+    }
+  },
+  {
+    "name": "IHES法国高等科学研究所",
+    "url": "https://www.ihes.fr/en/feed/",
+    "type": "rss",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ]
+  },
+  {
+    "name": "法兰西公学院",
+    "url": "https://www.college-de-france.fr/en/news?key=&sort_bef_combine=date_DESC&f%5B0%5D=area%3A10",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".grid-cards-news__item",
+      "title": "h3",
+      "link": ".card-news",
+      "date": ".card-news__date",
+      "author": ".card-news__author"
+    }
+  },
+  {
+    "name": "CNRS法国国家科学研究中心",
+    "url": "https://news.cnrs.fr/rss/4166",
+    "type": "rss",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://news.cnrs.fr/mathematics-0"
+  },
+  {
+    "name": "FSMP巴黎数学科学基金会",
+    "url": "https://www.sciencesmaths-paris.fr/en/e/news-en",
+    "type": "html",
+    "tags": [
+      "学会机构",
+      "法国",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".eb-post-content",
+      "title": "h2",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "IHP庞加莱研究所",
+    "url": "https://www.ihp.fr/en/research",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": ".item-title",
+      "link": "",
+      "date": "",
+      "author": ".news-item__category"
+    }
+  },
+  {
+    "name": "CIRM国际数学交流中心——法国马赛(暂无新闻列表)",
+    "url": "https://www.cirm-math.com/newsroom.html",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "傅里叶研究所",
+    "url": "https://www-fourier.univ-grenoble-alpes.fr/fr/actualites",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".g li",
+      "title": ".field-content a",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "SMAI法国应用与工业数学会",
+    "url": "http://smai.emath.fr/?lang=fr",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#encart li li",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "SFdS法国统计学会",
+    "url": "https://www.sfds.asso.fr/actusSFDS.atom",
+    "type": "rss",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学会机构"
+    ]
+  },
+  {
+    "name": "INSMI法国数学科学及其相互作用研究所",
+    "url": "https://www.insmi.cnrs.fr/fr/news-list",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list-bloc",
+      "title": "h2",
+      "link": ".bloc-link",
+      "date": "time",
+      "author": ".topic"
+    }
+  },
+  {
+    "name": "IUF法国大学研究院",
+    "url": "https://www.iufrance.fr/nos-actualites.html",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".layout_latest ",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "mathdoc法国数学文献协调单位",
+    "url": "https://www.mathdoc.fr/actualites/",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post ",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "IECL法国Lorraine洛林大学数学系",
+    "url": "https://iecl.univ-lorraine.fr/news/",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "Paris Saclay巴黎萨克雷大学数学系",
+    "url": "https://www.universite-paris-saclay.fr/en/mathematics",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ".thumbnail__tag"
+    }
+  },
+  {
+    "name": "IMO巴黎萨克雷大学奥赛Orsay研究所",
+    "url": "https://www.imo.universite-paris-saclay.fr/fr/linstitut/actualites/",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".blog-list article",
+      "title": ".post-title a",
+      "link": "",
+      "date": "header span",
+      "author": ""
+    }
+  },
+  {
+    "name": "IRMAR雷恩Rennes数学研究所",
+    "url": "https://irmar.univ-rennes.fr/actualites",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".tile",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "法国Rennes雷恩第一大学数学系",
+    "url": "https://irmar.univ-rennes.fr/actualites",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".avec_vignette td+td",
+      "title": "strong",
+      "link": "strong a",
+      "date": ".date",
+      "author": ".resume"
+    }
+  },
+  {
+    "name": "Mersenne梅森中心",
+    "url": "https://www.centre-mersenne.org/en/news/",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "期刊文献"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post",
+      "title": "h2",
+      "link": "a.elementor-button",
+      "date": "time",
+      "author": "a[rel=tag]"
+    }
+  },
+  {
+    "name": "INRIA法国国家信息与自动化研究所",
+    "url": "https://www.inria.fr/en/rss/recherche/actualites",
+    "type": "rss",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://www.inria.fr/en/actualites_evenements"
+  },
+  {
+    "name": "法国Claude Bernard Lyon 1里昂第1大学数学系",
+    "url": "http://feeds.feedburner.com/FSTlyon1math",
+    "type": "rss",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://fst-mathematiques.univ-lyon1.fr"
+  },
+  {
+    "name": "ICJ卡米尔·乔丹研究所（法国里昂第1大学）",
+    "url": "https://math.univ-lyon1.fr/icj/autres-actualites/",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".wp-block-post-content .wp-block-group.is-vertical",
+      "title": "h5,p",
+      "link": "",
+      "date": "p",
+      "author": ""
+    }
+  },
+  {
+    "name": "IP Paris巴黎综合理工学院",
+    "url": "https://www.polytechnique.edu/actualites-innovation?categorie=42&motcle=&formation=all&departement_enseignement=all&theme=79&laboratoire_x=all&laboratoire_ipp=all&departement_recherche_x=all&departement_recherche_ipp=all&centre=all&ecole=all&profil=",
+    "type": "html",
+    "tags": [
+      "法国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#resultatsForm .node--remontee",
+      "title": ".titre",
+      "link": "",
+      "date": ".info",
+      "author": ".theme"
+    }
+  },
+  {
+    "name": "LMS伦敦数学会",
+    "url": "https://www.lms.ac.uk/about/view-all-news",
+    "type": "html",
+    "tags": [
+      "英国",
+      "学会机构",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".item-list li",
+      "title": ".views-field-title",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "Maths.org",
+    "url": "https://maths.org/news",
+    "type": "html",
+    "tags": [
+      "科普媒体",
+      "英国",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Loughborough拉夫堡大学数学系",
+    "url": "https://www.lboro.ac.uk/departments/maths/news/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "AcadMathSci",
+    "url": "https://www.acadmathsci.org.uk/news/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card",
+      "title": ".card-title",
+      "link": ".card-title a",
+      "date": ".card-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "牛津大学数学系",
+    "url": "https://www.maths.ox.ac.uk/news/all",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "英国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "tr",
+      "title": "h2",
+      "link": "h2 a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Warwick华威大学",
+    "url": "https://warwick.ac.uk/sitebuilder2/api/rss/news.rss?page=/news/pressreleases/&rss=true",
+    "type": "rss",
+    "tags": [
+      "欧洲",
+      "英国",
+      "学院"
+    ]
+  },
+  {
+    "name": "英国York约克大学数学系",
+    "url": "https://www.york.ac.uk/maths/about/news/",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "英国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".uoy_listing_item",
+      "title": "h3",
+      "link": "",
+      "date": ".uoy_listing_item_meta p",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Sheffield谢菲尔德大学",
+    "url": "https://sheffield.ac.uk/mps/news",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h2",
+      "link": ".card-title a",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Cardiff卡迪夫大学数学系",
+    "url": "https://www.cardiff.ac.uk/mathematics/news",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "英国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".teaser",
+      "title": "h2",
+      "link": "h2 a",
+      "date": ".teaser-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Glasgow格拉斯哥大学数学系",
+    "url": "https://www.gla.ac.uk/schools/mathematicsstatistics/",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "英国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "Gowers's Weblog",
+    "url": "https://gowers.wordpress.com/feed/",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "英国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "Peter Rowlett（Travels in a Mathematical World – The Aperiodical）",
+    "url": "https://aperiodical.com/category/columns/travels-in-a-mathematical-world/feed/",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "英国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "Ben Orlin（Math with Bad Drawings）",
+    "url": "https://mathwithbaddrawings.com/feed/",
+    "type": "rss",
+    "tags": [
+      "英国",
+      "欧洲",
+      "数学家博客"
+    ]
+  },
+  {
+    "name": "IC伦敦帝国理工学院",
+    "url": "https://www.imperial.ac.uk/mathematics/news/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": ".listing-item__meta p",
+      "author": ""
+    }
+  },
+  {
+    "name": "剑桥数学系",
+    "url": "https://www.maths.cam.ac.uk/news/news-and-announcements",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".campl-news-listing",
+      "title": ".campl-listing-title",
+      "link": "",
+      "date": ".campl-datestamp",
+      "author": ""
+    }
+  },
+  {
+    "name": "剑桥数学博客",
+    "url": "https://www.cambridgemaths.org/blogs/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": ".blog-author span:nth-child(3)",
+      "author": ".blog-author a, .blog_category a"
+    }
+  },
+  {
+    "name": "英国Birmingham伯明翰大学数学系",
+    "url": "https://www.birmingham.ac.uk/news/all-news?term=newsmaths&preventScrollTop=true",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": ".search-result-detail__text",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Bristol布里斯托大学数学系",
+    "url": "https://www.bristol.ac.uk/maths/news/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h6",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Nottingham诺丁汉大学数学系",
+    "url": "https://www.nottingham.ac.uk/mathematics/news-and-events.aspx",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".sys_subitem",
+      "title": "h3",
+      "link": "",
+      "date": ".sys_news-datepublished + .sys_news-datepublished",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Leeds利兹大学数学系",
+    "url": "https://eps.leeds.ac.uk/news?categoryID=6&additionalCategoryIDs=",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".flag",
+      "title": "h4",
+      "link": "",
+      "date": ".heading-related",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Bath巴斯大学数学系",
+    "url": "https://search.bath.ac.uk/s/search.html?collection=bath~sp-cms-production-announcements&f.Department+or+group%7CX=Faculty+of+Science",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://www.bath.ac.uk/departments/department-of-mathematical-sciences/",
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": ".announcements-published-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UCL伦敦大学学院数学系",
+    "url": "https://www.ucl.ac.uk/mathematical-physical-sciences/maths/news",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".generic-feed-listing-item",
+      "title": "h3",
+      "link": "",
+      "date": ".generic-feed-listing-item__date",
+      "author": ""
+    }
+  },
+  {
+    "name": "KCL伦敦国王学院数学系",
+    "url": "https://www.kcl.ac.uk/mathematics/news",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": ".article-item__date",
+      "author": ".article-item__cats"
+    }
+  },
+  {
+    "name": "爱尔兰数学会",
+    "url": "https://www.irishmathsoc.org",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".inner > ul li",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "爱丁堡大学数学系",
+    "url": "https://maths.ed.ac.uk/news",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list-card",
+      "title": "h3",
+      "link": "",
+      "date": ".news-date",
+      "author": ".news-date ~ span"
+    }
+  },
+  {
+    "name": "爱丁堡数学会",
+    "url": "https://www.ems.ac.uk",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#content article",
+      "title": "h4",
+      "link": "h4 a",
+      "date": ".entry-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "IMA英国数学及其应用学会",
+    "url": "https://ima.org.uk",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": ".entry-title",
+      "link": "",
+      "date": "time",
+      "author": ".post-category"
+    }
+  },
+  {
+    "name": "IMA英国数学及其应用学会《今日数学》",
+    "url": "https://ima.org.uk/publications/mathematics-today/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".main article",
+      "title": ".entry-title",
+      "link": "",
+      "date": "time",
+      "author": ".post-category"
+    }
+  },
+  {
+    "name": "RSS英国皇家统计学会",
+    "url": "https://rss.org.uk/news-publications/all-news/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list-item ",
+      "title": "h5",
+      "link": "",
+      "date": ".news-info li:nth-child(1)",
+      "author": ".news-info li:nth-child(2)"
+    }
+  },
+  {
+    "name": "英国Lancaster兰卡斯特大学数学系",
+    "url": "https://www.lancaster.ac.uk/api/news/v1/get-news-by-channel/?chan=3739b68f-f527-4722-8aad-00e9fb48a266&epoint=&limit=12&page=1&tags=",
+    "type": "json",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "ArticleList",
+      "title": "Title",
+      "link": "Slug",
+      "date": "PublicationDate",
+      "author": "Topic.Name"
+    }
+  },
+  {
+    "name": "South Ampton英国南安普敦大学（修咸顿大学）数学系",
+    "url": "https://www.southampton.ac.uk/maths/news/latest.page",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".uos-box-news",
+      "title": "h2",
+      "link": ".uos-box-copy-meta + a",
+      "date": ".uos-box-copy-meta",
+      "author": ""
+    }
+  },
+  {
+    "name": "苏格兰St. Andrews圣安德鲁斯大学数学系",
+    "url": "https://www.st-andrews.ac.uk/mathematics-statistics/news/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "dd",
+      "author": ""
+    }
+  },
+  {
+    "name": "苏格兰Strathclyde斯特拉斯克莱德大学数学系",
+    "url": "https://www.strath.ac.uk/science/mathematicsstatistics/newsarchive/",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "英国Sussex萨塞克斯大学",
+    "url": "https://www.sussex.ac.uk/research/full-news-list",
+    "type": "html",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#news columns",
+      "title": "h3",
+      "link": "",
+      "date": ".meta",
+      "author": ""
+    }
+  },
+  {
+    "name": "Gresham格雷沙姆学院数学",
+    "url": "https://www.gresham.ac.uk/sites/default/files/attachments/whatsonall.json",
+    "type": "json",
+    "tags": [
+      "英国",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://www.gresham.ac.uk/watch-now/browse-all?type=569",
+    "method": "GET",
+    "rules": {
+      "item": "events | vocabOne[0].name=Maths",
+      "title": "title",
+      "link": "link",
+      "date": "calculated_start_date",
+      "author": "hiddenNodeRefs[0].name"
+    }
+  },
+  {
+    "name": "DMV德国数学会",
+    "url": "https://www.mathematik.de/vermischtes",
+    "type": "html",
+    "tags": [
+      "德国",
+      "学会机构",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".article",
+      "title": "h2 a",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "MPI-MiS莱比锡马普数学所",
+    "url": "https://www.mis.mpg.de/news/",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".splide__slide",
+      "title": "h3 a .show-on-desktop",
+      "link": "h3 a",
+      "date": "[data-component=eyebrow] > span",
+      "author": "[data-component=eyebrow] > div"
+    }
+  },
+  {
+    "name": "MFO奥博沃尔法赫",
+    "url": "https://www.mfo.de/about-the-institute/news",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".entry",
+      "title": ".summary a",
+      "link": "",
+      "date": ".description",
+      "author": ""
+    }
+  },
+  {
+    "name": "HLF海德堡桂冠论坛博客",
+    "url": "https://scilogs.spektrum.de/hlf/feed/",
+    "type": "rss",
+    "tags": [
+      "科普媒体",
+      "德国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "M×Φ——mxphi.com",
+    "url": "https://www.mxphi.com/latest-articles/",
+    "type": "html",
+    "tags": [
+      "期刊文献",
+      "德国",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".article-grid article",
+      "title": ".card-title a",
+      "link": "",
+      "date": ".preprint-label",
+      "author": ".author-link"
+    }
+  },
+  {
+    "name": "M×Φ——mxphi.com（RSS）",
+    "url": "https://www.mxphi.com/feed/en/",
+    "type": "rss",
+    "tags": [
+      "期刊文献",
+      "德国",
+      "欧洲"
+    ],
+    "homepage": "https://www.mxphi.com/latest-articles/"
+  },
+  {
+    "name": "MFO德国奥博沃尔法赫（科普）",
+    "url": "https://publications.mfo.de/feed/rss_2.0/mfo/20",
+    "type": "rss",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ]
+  },
+  {
+    "name": "TUHH汉堡工业大学数学系",
+    "url": "https://www.mat.tuhh.de/index_en.html",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#news li",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "德国Bremen不来梅大学",
+    "url": "https://www.uni-bremen.de/en/university/university-communication-and-marketing/all-news",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list2-view article",
+      "title": "h2",
+      "link": ".news-link",
+      "date": "time",
+      "author": ".news-list-category"
+    }
+  },
+  {
+    "name": "TU德国柏林工业大学数学系",
+    "url": "https://www.tu.berlin/en/news/scientific-disciplines/mathematics",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".grid .solr__listItem,.article",
+      "title": ".h3,h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "RUB德国波鸿鲁尔大学数学系",
+    "url": "https://math.ruhr-uni-bochum.de/en/news/current-news/",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list-view a",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "HHU德国杜塞尔多夫海因里希·海涅大学数学系",
+    "url": "https://www.math.hhu.de/en/termine/news-listenansicht",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".article:has(time)",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ".news-list-category"
+    }
+  },
+  {
+    "name": "DFG德国科学基金会",
+    "url": "https://www.dfg.de/service/rss/en/324778/feed.rss",
+    "type": "rss",
+    "tags": [
+      "学会机构",
+      "德国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "DFG德国科学基金会Press Releases",
+    "url": "https://www.dfg.de/en/service/press/press-releases",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#main-content .e-pressrelease-teaser",
+      "title": "a",
+      "link": "",
+      "date": "div span:nth-child(2)",
+      "author": ""
+    }
+  },
+  {
+    "name": "德国Bonn波恩大学数学系",
+    "url": "https://www.math.uni-bonn.de/?language=en",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#col2 p",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "德国Goettingen哥廷根大学数学系",
+    "url": "https://www.uni-goettingen.de/en/20693.html",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "h2 ~ .txtlist > li",
+      "title": "h2",
+      "link": "",
+      "date": "after: a",
+      "author": ""
+    }
+  },
+  {
+    "name": "德国Dresden德累斯顿工业大学数学系",
+    "url": "https://tu-dresden.de/mn/math/die-fakultaet/news",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-teaser .columns",
+      "title": ".h2",
+      "link": "",
+      "date": ".news-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "德国Leipzig莱比锡大学数学系",
+    "url": "https://www.mathcs.uni-leipzig.de/en/fakultaet/news",
+    "type": "html",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".newsListItem",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": "after: time + span"
+    }
+  },
+  {
+    "name": "TUB德国Braunschweig布伦瑞克工业大学",
+    "url": "https://magazin.tu-braunschweig.de/en/feed/",
+    "type": "rss",
+    "tags": [
+      "德国",
+      "欧洲",
+      "学院"
+    ]
+  },
+  {
+    "name": "IDW科学信息服务网",
+    "url": "https://idw-online.de/de/pressreleasesrss?langs=de_DE&langs=en_US&category_ids=4&category_ids=10&category_ids=7&category_ids=1&category_ids=13&category_ids=6&category_ids=2&category_ids=14&category_ids=12&category_ids=8&category_ids=11&category_ids=5&category_ids=3&category_ids=15&category_ids=9&field_ids=200",
+    "type": "rss",
+    "tags": [
+      "德国",
+      "欧洲",
+      "科普媒体"
+    ]
+  },
+  {
+    "name": "意大利博洛尼亚大学数学系",
+    "url": "https://math.unibo.it/en/news",
+    "type": "html",
+    "tags": [
+      "意大利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-box .item",
+      "title": "h2",
+      "link": "",
+      "date": "",
+      "author": ".type"
+    }
+  },
+  {
+    "name": "SISSA意大利的里雅斯特国际高等研究院（暂无新闻页）",
+    "url": "https://www.math.sissa.it",
+    "type": "html",
+    "tags": [
+      "意大利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "意大利国家（四十院士）科学院",
+    "url": "https://www.accademiaxl.it/news/",
+    "type": "html",
+    "tags": [
+      "意大利",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".elementor-posts article",
+      "title": "h3",
+      "link": "",
+      "date": ".elementor-post-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "Polimi米兰理工大学数学系",
+    "url": "https://www.mate.polimi.it/news/?lg=en",
+    "type": "html",
+    "tags": [
+      "意大利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": ".archivio-polimi-titolo",
+      "link": ".archivio-polimi-wrapper -> onclick",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "MaddMath!",
+    "url": "https://maddmaths.simai.eu/category/news-2/news-news-2/",
+    "type": "html",
+    "tags": [
+      "科普媒体",
+      "欧洲",
+      "意大利"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".et_pb_slide,article",
+      "title": "h2",
+      "link": "h2 a",
+      "date": ".published",
+      "author": ".post-meta"
+    }
+  },
+  {
+    "name": "瑞典斯德哥尔摩大学数学系",
+    "url": "https://www.su.se/english/divisions/department-of-mathematics/news",
+    "type": "json",
+    "tags": [
+      "瑞典",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "KVA瑞典皇家科学院",
+    "url": "https://www.kva.se/wp-json/wp/v2/news?per_page=12&page=1&search=&lang=sv",
+    "type": "json",
+    "tags": [
+      "瑞典",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "title.rendered",
+      "link": "link",
+      "date": "date",
+      "author": ""
+    }
+  },
+  {
+    "name": "KTH瑞典皇家理工学院",
+    "url": "https://www.kth.se/math",
+    "type": "html",
+    "tags": [
+      "瑞典",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "瑞典Uppsala乌普萨拉大学数学系",
+    "url": "https://www.uu.se/en/department/mathematics/news",
+    "type": "html",
+    "tags": [
+      "瑞典",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".artic",
+      "title": ".list-group-item-action-title",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "挪威Oslo奥斯陆大学数学系",
+    "url": "https://www.mn.uio.no/math/english/research/news-and-events/?vrtx=feed",
+    "type": "rss",
+    "tags": [
+      "挪威",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://www.mn.uio.no/math/english/research/news-and-events/"
+  },
+  {
+    "name": "Rényi匈牙利雷尼研究所",
+    "url": "https://www.renyi.hu/en/news",
+    "type": "html",
+    "tags": [
+      "匈牙利",
+      "学院",
+      "欧洲"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article.news",
+      "title": "h2",
+      "link": "h2 a",
+      "date": ".news-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "Guelph加拿大圭尔夫大学数学系",
+    "url": "https://mathstat.uoguelph.ca/news",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "UQAM加拿大魁北克大学蒙特利尔分校数学系",
+    "url": "https://ism.uqam.ca/news/",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".event",
+      "title": "h2",
+      "link": "",
+      "date": ".event-date",
+      "author": ".updates_callout_item_flag"
+    }
+  },
+  {
+    "name": "加拿大Cape Breton凯波·布兰顿大学",
+    "url": "https://www.cbu.ca/newsroom/articles/",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news",
+      "title": "h1",
+      "link": "",
+      "date": ".publish-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大Concordia康考迪亚（协和）大学",
+    "url": "https://www.concordia.ca/artsci/math-stats/news/archive.html",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".c-card",
+      "title": ".c-card__title",
+      "link": "",
+      "date": ".c-card__date",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大McMaster大学数学系",
+    "url": "https://math.mcmaster.ca/news-events/news/",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#site-content .card .card",
+      "title": "h3",
+      "link": "",
+      "date": ".card-footer strong",
+      "author": ".card-subtitle"
+    }
+  },
+  {
+    "name": "SFU加拿大Simon Fraser大学数学系",
+    "url": "https://www.sfu.ca/math/news.html",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".sfu-list li",
+      "title": ".card-list__item--title",
+      "link": "",
+      "date": ".card-list__item--date p",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大Saskatchewan大学数学系",
+    "url": "https://artsandscience.usask.ca/math/news/index.php",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card",
+      "title": "h4",
+      "link": "",
+      "date": "",
+      "author": "h6"
+    }
+  },
+  {
+    "name": "加拿大Albeerta大学数学系",
+    "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/news/math-and-stats-news.html",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post",
+      "title": "h4",
+      "link": "",
+      "date": ".post-meta",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大Toronto多伦多大学数学系",
+    "url": "https://www.mathematics.utoronto.ca/news?sort_by=news_uoft_date_value&items_per_page=All",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": "h3",
+      "link": "",
+      "date": ".date-display-single",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大Ottawa渥太华大学数学系",
+    "url": "https://www.uottawa.ca/en/news-all?title=&group%5B7116%5D=7116",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "homepage": "https://www.uottawa.ca/faculty-science/mathematics-statistics",
+    "method": "GET",
+    "rules": {
+      "item": ".article-teaser__item-content",
+      "title": "h2",
+      "link": "",
+      "date": "br + .body",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大Waterloo滑铁卢大学数学系",
+    "url": "https://uwaterloo.ca/math/news-events",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大Montréal蒙特利尔大学数学系",
+    "url": "https://dms.umontreal.ca/en/our-department/news-and-events",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-list-view .article",
+      "title": "h3",
+      "link": "",
+      "date": "[itemprop=dateModified]",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大McGill麦吉尔大学数学系",
+    "url": "https://www.mcgill.ca/mathstat/channels_item/2/rss",
+    "type": "rss",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "homepage": "https://www.mcgill.ca/mathstat/channels_item/2"
+  },
+  {
+    "name": "UBC加拿大不列颠哥伦比亚大学数学系",
+    "url": "https://www.math.ubc.ca/news-events/news",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".teaser__content",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "加拿大Queen皇后大学数学系",
+    "url": "https://www.queensu.ca/mathstat/news-feed.xml",
+    "type": "rss",
+    "tags": [
+      "加拿大",
+      "学院"
+    ]
+  },
+  {
+    "name": "加拿大Concordia康考迪亚大学数学系",
+    "url": "https://www.concordia.ca/artsci/math-stats/news.html",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".c-news-list__list li,.c-card__container",
+      "title": ".text,.c-card__title",
+      "link": "",
+      "date": ".date,.c-card__date",
+      "author": ""
+    }
+  },
+  {
+    "name": "UVic加拿大维多利亚大学数学系",
+    "url": "https://www.uvic.ca/science/math-statistics/home/home/announcements/index.php",
+    "type": "html",
+    "tags": [
+      "加拿大",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".feed-item",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "以色列希伯来大学HUJI爱因斯坦数学所",
+    "url": "https://mathematics.huji.ac.il/news",
+    "type": "html",
+    "tags": [
+      "以色列",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "a",
+      "date": ".date-display-single",
+      "author": ""
+    }
+  },
+  {
+    "name": "以色列Weizmann魏茨曼科学研究院数学系",
+    "url": "https://www.weizmann.ac.il/math/news",
+    "type": "html",
+    "tags": [
+      "以色列",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": ".short-abstract",
+      "link": "a",
+      "date": ".news-date",
+      "author": ".news-category"
+    }
+  },
+  {
+    "name": "以色列理工学院数学系",
+    "url": "https://math.technion.ac.il/en/category/news-en/",
+    "type": "html",
+    "tags": [
+      "以色列",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".article",
+      "title": ".art-title",
+      "link": "",
+      "date": ".views-field-created",
+      "author": ""
+    }
+  },
+  {
+    "name": "以色列特拉维夫大学数学系",
+    "url": "https://en-exact-sciences.tau.ac.il/math/News",
+    "type": "html",
+    "tags": [
+      "以色列",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".views-row",
+      "title": ".views-field-title",
+      "link": "",
+      "date": ".views-field-created",
+      "author": ""
+    }
+  },
+  {
+    "name": "IIT Bombay印度理工大学孟买数学系",
+    "url": "https://www.math.iitb.ac.in/NewsEvents/news.php",
+    "type": "html",
+    "tags": [
+      "印度",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article.news-item",
+      "title": "h4",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "IIT Madras印度理工大学马德拉斯数学系",
+    "url": "https://math.iitm.ac.in/mainnews.php",
+    "type": "html",
+    "tags": [
+      "印度",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post-slide",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "IIT Dharwad印度理工大学达瓦德分校数学系",
+    "url": "https://maths.iitdh.ac.in",
+    "type": "html",
+    "tags": [
+      "印度",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "IISc印度科学研究所数学系",
+    "url": "https://math.iisc.ac.in/news.html",
+    "type": "html",
+    "tags": [
+      "印度",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post-list li",
+      "title": "h5",
+      "link": "",
+      "date": ".post-meta",
+      "author": ""
+    }
+  },
+  {
+    "name": "CMI印度钦奈数学学院",
+    "url": "https://www.cmi.ac.in//events/",
+    "type": "html",
+    "tags": [
+      "印度",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".page_content li",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "IMSc印度钦奈数学科学研究所",
+    "url": "https://www.imsc.res.in/mathematics",
+    "type": "html",
+    "tags": [
+      "印度",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "韩国基础科学研究所（IBS）",
+    "url": "https://www.ibs.re.kr/cop/bbs/BBSMSTR_000000000739/selectBoardList.do",
+    "type": "html",
+    "tags": [
+      "韩国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".item",
+      "title": ".subject",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "韩国基础科学研究所（IBS）极值组合与概率组（ECOPRO）",
+    "url": "https://www.ibs.re.kr/ecopro/news/",
+    "type": "html",
+    "tags": [
+      "韩国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": "time.published",
+      "author": ""
+    }
+  },
+  {
+    "name": "KIAS韩国高等研究院",
+    "url": "https://www.kias.re.kr/kias/bbs/B0000029/list.do?menuNo=406005&lang=en",
+    "type": "html",
+    "tags": [
+      "韩国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".photo-list li",
+      "title": ".title",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "KIAS韩国高等研究院-媒体报道",
+    "url": "https://www.kias.re.kr/kias/bbs/B0000031/list.do?menuNo=406003&lang=en",
+    "type": "html",
+    "tags": [
+      "科普媒体",
+      "韩国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "tbody tr",
+      "title": ".cell-title",
+      "link": "",
+      "date": ".cell-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "KAIST韩国科学技术院",
+    "url": "https://kaistcompass.kaist.ac.kr/?magazine_category=mathematical-sciences&category_id=11",
+    "type": "html",
+    "tags": [
+      "韩国",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".ss_group li",
+      "title": "h2",
+      "link": "",
+      "date": "img[src]",
+      "author": ".post-item-category"
+    }
+  },
+  {
+    "name": "VMS越南数学会",
+    "url": "https://www.vms.org.vn/news",
+    "type": "html",
+    "tags": [
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post-preview",
+      "title": "h2",
+      "link": "",
+      "date": "after: .post-meta a",
+      "author": ".post-meta a"
+    }
+  },
+  {
+    "name": "比利时G(h)ent根特大学数学系",
+    "url": "https://www.ugent.be/we/winst/en/news-events/news",
+    "type": "html",
+    "tags": [
+      "比利时",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#content-core tr",
+      "title": "a",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "比利时Liege列日大学数学系",
+    "url": "https://www.mathematics.uliege.be/cms/c_4179149/en/all-news",
+    "type": "html",
+    "tags": [
+      "比利时",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".u-card",
+      "title": "h3",
+      "link": "h3 a",
+      "date": "",
+      "author": ".u-card__content__header__category"
+    }
+  },
+  {
+    "name": "KU Leuven比利时鲁汶大学数学系",
+    "url": "https://wis.kuleuven.be/events",
+    "type": "html",
+    "tags": [
+      "比利时",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".documentFirstHeading",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "VUB比利时Vrije Universiteit Brussel布鲁塞尔自由大学数学系",
+    "url": "https://wids.research.vub.be/nl/nieuws",
+    "type": "html",
+    "tags": [
+      "比利时",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "VUB比利时Vrije Universiteit Brussel布鲁塞尔自由大学",
+    "url": "https://www.vub.be/nl/nieuws/nieuws-overzicht?field_education=a9bf5e7d-997c-4bf5-bb57-b73c79d382e0",
+    "type": "html",
+    "tags": [
+      "比利时",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-teaser",
+      "title": "h3",
+      "link": "",
+      "date": ".news-teaser__publication-date",
+      "author": ".news-teaser__theme"
+    }
+  },
+  {
+    "name": "卢森堡大学数学系",
+    "url": "https://www.uni.lu/fstm-en/research-departments/department-of-mathematics/",
+    "type": "html",
+    "tags": [
+      "卢森堡",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".wp-block-unilux-blocks-news-card-group",
+      "title": "h3",
+      "link": ".ulux-card__link",
+      "date": "time",
+      "author": ".ulux-card__category"
+    }
+  },
+  {
+    "name": "CAS捷克科学院",
+    "url": "https://www.avcr.cz/en/news-archive/",
+    "type": "html",
+    "tags": [
+      "捷克",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".item ",
+      "title": "h3",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "荷兰莱顿洛伦兹研究所",
+    "url": "https://www.lorentzcenter.nl/news.html",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "荷兰",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "tr.item",
+      "title": "strong a",
+      "link": "strong a",
+      "date": ".subtext",
+      "author": ""
+    }
+  },
+  {
+    "name": "VUA荷兰阿姆斯特丹自由大学数学系",
+    "url": "https://vu.nl/api/search",
+    "type": "json",
+    "tags": [
+      "荷兰",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://vu.nl/en/news?filters=Departments:Mathematics",
+    "method": "POST",
+    "payload": "{\n    \"queryType\": \"full\",\n    \"count\": true,\n    \"facets\": [\n        \"Filter, count: 1000\",\n        \"ImplicitFilter, count: 1000\"\n    ],\n    \"filter\": \"ItemType/any(c: search.in(c, 'News', '|')) and Language eq 'EN' and (Filter/any(c: search.in(c, 'afdelingen--wiskunde', '|')) or ImplicitFilter/any(c: search.in(c, '', '|')))\",\n    \"highlight\": \"IntroText\",\n    \"highlightPreTag\": \"<b>\",\n    \"highlightPostTag\": \"</b>\",\n    \"orderby\": \"search.score() desc, SubTitle desc, Title asc\",\n    \"scoringProfile\": \"BoostTitle\",\n    \"search\": \"*\",\n    \"skip\": 0,\n    \"top\": 10\n}",
+    "rules": {
+      "item": "value",
+      "title": "IntroText",
+      "link": "Url",
+      "date": "SubTitle",
+      "author": "Categories"
+    }
+  },
+  {
+    "name": "KdVI.UvA荷兰科特韦赫-德弗里斯数学研究所",
+    "url": "https://www.uva.nl/_restapi/list-json?uuid=45064b38-1649-4082-bb09-870d40b14007&mount=d9366c3d-4d21-4405-b60b-f80b3aa9542a",
+    "type": "json",
+    "tags": [
+      "荷兰",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://kdvi.uva.nl/news-and-events/news/news.html",
+    "method": "GET",
+    "rules": {
+      "item": "items",
+      "title": "title",
+      "link": "url",
+      "date": "publicationDate",
+      "author": "newsType"
+    }
+  },
+  {
+    "name": "荷兰Utrecht乌德勒支大学数学系",
+    "url": "https://www.uu.nl/en/nieuws.rss?category-containers=6210467%2C6210468%2C6210469",
+    "type": "rss",
+    "tags": [
+      "荷兰",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://www.uu.nl/en/organisation/department-of-mathematics"
+  },
+  {
+    "name": "KWG荷兰皇家数学会",
+    "url": "https://kwg.nl/en/nieuws/",
+    "type": "html",
+    "tags": [
+      "荷兰",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".pp-content-post",
+      "title": "h4",
+      "link": "",
+      "date": ".post-date",
+      "author": ".post-cat"
+    }
+  },
+  {
+    "name": "UU荷兰乌得勒支大学",
+    "url": "https://www.uu.nl/en/organisation/news?f%5B0%5D=organisational_unit%3A57023",
+    "type": "html",
+    "tags": [
+      "荷兰",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".overview-list__item",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ".post-cat"
+    }
+  },
+  {
+    "name": "荷兰Radboud拉德堡德（旧为奈梅亨）大学数学系",
+    "url": "https://www.ru.nl/en/about-us/news/feed",
+    "type": "rss",
+    "tags": [
+      "荷兰",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://www.ru.nl/en/about-us/news/provider/mathematics-877"
+  },
+  {
+    "name": "荷兰Groningen格罗宁根大学",
+    "url": "https://www.rug.nl/about-ug/latest-news/press-information/rss-feeds",
+    "type": "rss",
+    "tags": [
+      "荷兰",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://www.rug.nl/masters/mathematics/?lang=en"
+  },
+  {
+    "name": "CEU奥地利中欧大学",
+    "url": "https://www.ceu.edu/news",
+    "type": "html",
+    "tags": [
+      "奥地利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h2",
+      "link": "",
+      "date": ".node__content",
+      "author": ""
+    }
+  },
+  {
+    "name": "NuMa.JKU-Linz奥地利约翰·开普勒林茨大学数值数学所",
+    "url": "https://numa.jku.at/news/",
+    "type": "html",
+    "tags": [
+      "奥地利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".container-xl li",
+      "title": "",
+      "link": "",
+      "date": "after: a",
+      "author": ""
+    }
+  },
+  {
+    "name": "奥地利Vienna维也纳大学数学系",
+    "url": "https://mathematik.univie.ac.at/en/eventsnews/",
+    "type": "html",
+    "tags": [
+      "奥地利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-box.article",
+      "title": "h3",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "VUT奥地利TU Wien维也纳工业大学数学系",
+    "url": "https://www.tuwien.at/en/mg/asc/news",
+    "type": "html",
+    "tags": [
+      "奥地利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "奥地利Innsbruck因斯布鲁克大学数学系",
+    "url": "https://www.uibk.ac.at/de/mathematik/events/news/",
+    "type": "html",
+    "tags": [
+      "奥地利",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".card",
+      "title": "h2",
+      "link": "",
+      "date": "date",
+      "author": ".uibk-card-classifiers"
+    }
+  },
+  {
+    "name": "UO捷克奥斯特拉发大学数学系",
+    "url": "https://prf.osu.eu/kma/news-archive/",
+    "type": "html",
+    "tags": [
+      "捷克",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "#levy h2",
+      "title": "a",
+      "link": "a",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "UO捷克奥斯特拉发大学",
+    "url": "https://www.osu.cz/rss/en/31000/",
+    "type": "rss",
+    "tags": [
+      "捷克",
+      "欧洲",
+      "学院"
+    ],
+    "homepage": "https://prf.osu.eu/kma/news-archive/"
+  },
+  {
+    "name": "波兰Kamil Duszenko Award卡米尔・杜申科奖",
+    "url": "https://kamil.math.uni.wroc.pl/mathematics/news",
+    "type": "html",
+    "tags": [
+      "波兰",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "section:has(h3)",
+      "title": "h3",
+      "link": "",
+      "date": "h3",
+      "author": ""
+    }
+  },
+  {
+    "name": "CRN（里尔-纳德泽夫斯基中心）Ryll-Nardzewski奖",
+    "url": "https://crn.pwr.edu.pl/en/aktualnosci",
+    "type": "html",
+    "tags": [
+      "波兰",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news-item",
+      "title": ".title",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "芬兰Aalto阿尔托大学数学系",
+    "url": "https://math.aalto.fi/en/",
+    "type": "html",
+    "tags": [
+      "芬兰",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".news",
+      "title": "h2",
+      "link": "",
+      "date": ".news-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "芬兰Tampere阿坦佩雷大学数学系",
+    "url": "https://www.tuni.fi/en/search?organisation=1&search_type=news&news_unit=8339",
+    "type": "html",
+    "tags": [
+      "芬兰",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "a:has(h3)",
+      "title": "h3",
+      "link": "",
+      "date": "a > div:nth-child(3) > div > div:nth-child(2)",
+      "author": "a > div:nth-child(2)"
+    }
+  },
+  {
+    "name": "芬兰Abo Akademi爱博学术大学数学系",
+    "url": "https://www.abo.fi/en/news/news-archive/?news_q=&news_c_specialCategories=&news_c_freeCategories=mathematics",
+    "type": "html",
+    "tags": [
+      "芬兰",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".findkit--hit",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "芬兰Jyväskylä于韦斯屈莱大学数学系",
+    "url": "https://www.jyu.fi/en/science/maths/news",
+    "type": "html",
+    "tags": [
+      "芬兰",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".grid__item",
+      "title": "h3",
+      "link": "",
+      "date": ".published-date",
+      "author": ".field-content-topic"
+    }
+  },
+  {
+    "name": "芬兰Helsinki赫尔辛基大学数学系",
+    "url": "https://www.helsinki.fi/en/faculty-science/faculty/mathematics-and-statistics",
+    "type": "html",
+    "tags": [
+      "芬兰",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "KFF费萨尔国王奖",
+    "url": "https://www.kff.com/news/",
+    "type": "html",
+    "tags": [
+      "阿拉伯",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h4",
+      "link": "",
+      "date": ".elementor-post-date",
+      "author": ""
+    }
+  },
+  {
+    "name": "KFF费萨尔国王奖feed",
+    "url": "https://www.kff.com/feed/",
+    "type": "rss",
+    "tags": [
+      "阿拉伯",
+      "学会机构"
+    ]
+  },
+  {
+    "name": "KFAS",
+    "url": "https://research.kfas.org.kw/en/prizes/?type=%2Fdk%2Fatira%2Fpure%2Fprize%2Fprizetypes%2Fprize%2Fprize%2Fkfas_kuwait_prize&allConcepts=true&andConceptIds=9ee89a21-667e-4d85-89fb-74e05912a6ef&format=rss",
+    "type": "rss",
+    "tags": [
+      "学会机构",
+      "阿拉伯"
+    ],
+    "homepage": "https://research.kfas.org.kw/en/prizes/?type=%2Fdk%2Fatira%2Fpure%2Fprize%2Fprizetypes%2Fprize%2Fprize%2Fkfas_kuwait_prize&nofollow=true&allConcepts=true&andConceptIds=9ee89a21-667e-4d85-89fb-74e05912a6ef"
+  },
+  {
+    "name": "ICMAT西班牙数学所",
+    "url": "https://www.icmat.es/news/",
+    "type": "html",
+    "tags": [
+      "欧洲",
+      "西班牙",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article.post",
+      "title": "h4",
+      "link": " h4 a",
+      "date": ".wp-show-posts-updated",
+      "author": ".wp-show-posts-terms"
+    }
+  },
+  {
+    "name": "UB西班牙巴塞罗那大学（403报错）",
+    "url": "https://web.ub.edu/en/web/actualitat/news?categoriaTematica=3904850&categoriaTematica=2949086",
+    "type": "html",
+    "tags": [
+      "西班牙",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".search-result-item",
+      "title": "h2",
+      "link": "",
+      "date": "h2 span",
+      "author": ".searh-result-category"
+    }
+  },
+  {
+    "name": "BBVA Foundation Award西班牙对外银行基金会科学奖",
+    "url": "https://www.frontiersofknowledgeawards-fbbva.es/laureates/",
+    "type": "html",
+    "tags": [
+      "西班牙",
+      "欧洲",
+      "学会机构"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "Wits南非Witwatersrand金山大学数学系",
+    "url": "https://www.wits.ac.za/maths/",
+    "type": "html",
+    "tags": [
+      "非洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "author": ""
+    }
+  },
+  {
+    "name": "南非Cape Town开普敦大学数学系",
+    "url": "https://science.uct.ac.za/department-mathematics/news",
+    "type": "html",
+    "tags": [
+      "非洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "丹麦哥本哈根大学数学系",
+    "url": "https://www.math.ku.dk/english/about/news/",
+    "type": "html",
+    "tags": [
+      "丹麦",
+      "欧洲",
+      "学院"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": "article",
+      "title": "h3",
+      "link": "",
+      "date": ".date",
+      "author": ""
+    }
+  },
+  {
+    "name": "Xena Project (Kevin Buzzard)",
+    "url": "https://xenaproject.wordpress.com/feed",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "英国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "证明与提示Proofsandprompts",
+    "url": "https://proofsandprompts.com/feed/",
+    "type": "rss",
+    "tags": [
+      "科普媒体",
+      "美国"
+    ]
+  },
+  {
+    "name": "AMS美国数学会博客专栏",
+    "url": "https://mathvoices.ams.org/featurecolumn/feed/",
+    "type": "rss",
+    "tags": [
+      "美国",
+      "学会机构"
+    ]
+  },
+  {
+    "name": "Daniel Litt",
+    "url": "https://www.daniellitt.com/rss.xml",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "Birds and Frogs (Nestor Guillen)",
+    "url": "https://birdsnfrogs.github.io/atom.xml",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "Fernando Borretti",
+    "url": "https://borretti.me/feed.xml",
+    "type": "rss",
+    "tags": [
+      "澳大利亚",
+      "IT",
+      "数学家博客"
+    ]
+  },
+  {
+    "name": "Djalil CHAFAÏ",
+    "url": "https://djalil.chafai.net/blog/feed/",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "法国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "Asaf Karagila",
+    "url": "http://karagila.org/feed.xml",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "英国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "Shtetl-Optimized (Scott Aaronson)",
+    "url": "https://scottaaronson.blog/?feed=rss2",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国",
+      "IT"
+    ]
+  },
+  {
+    "name": "David Bessis",
+    "url": "https://davidbessis.substack.com/feed",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "法国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "Kolen Cheung (张科伦)",
+    "url": "https://blog.kolen.dev/index.xml",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "英国",
+      "欧洲",
+      "IT"
+    ],
+    "homepage": "https://blog.kolen.dev/#category=Math"
+  },
+  {
+    "name": "Tasmin Chu（塔斯敏·朱）",
+    "url": "https://tasmin.substack.com/feed",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "Sarcastic Resonance (Renan Gross)",
+    "url": "https://sarcasticresonance.wordpress.com/feed/",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "英国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "Silicon Reckoner (Michael Harris)",
+    "url": "https://siliconreckoner.substack.com/feed",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "Steven Heilman",
+    "url": "https://stevenheilman.substack.com/feed",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+    "name": "Najib Idrissi",
+    "url": "https://idrissi.eu/rss.xml",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "法国",
+      "欧洲"
+    ]
+  },
+  {
+    "name": "Tobias Osborne",
+    "url": "https://tjoresearchnotes.wordpress.com/feed",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国",
+      "物理"
+    ]
+  },
+  {
+    "name": "AI for integrability (Balázs Pozsgay)",
+    "url": "https://aiforintegrability.substack.com/feed",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "匈牙利",
+      "欧洲",
+      "物理"
+    ]
+  },
+  {
+    "name": "Guanyang Wang 王冠扬",
+    "url": "https://guanyangwang.github.io/blog/",
+    "type": "html",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ],
+    "method": "GET",
+    "rules": {
+      "item": ".post-list li",
+      "title": "h2",
+      "link": "",
+      "date": "time",
+      "author": ""
+    }
+  },
+  {
+    "name": "Math-colored glasses (Dan Romik)",
+    "url": "https://blog.danromik.com/rss.xml",
+    "type": "rss",
+    "tags": [
+      "数学家博客",
+      "美国"
+    ]
+  },
+  {
+  "name": "proofsandprompts newsfeed (非rss)",
+  "url": "https://proofsandprompts.com/newsfeed/",
+  "type": "html",
+  "tags": [
+    "科普媒体",
+    "美国"
+  ],
+  "method": "GET",
+  "rules": {
+    "item": ".wp-block-column div.wp-block-group",
+    "title": ".has-contrast-color",
+    "link": "",
+    "date": ".has-secondary-color",
+    "author": ""
+  }
+}
+]

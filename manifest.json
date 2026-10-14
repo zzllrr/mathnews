@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "MathNews",
+  "version": "2026.6.29",
+  "description": "聚合国外顶级数学机构、数学家博客与YouTube频道的最新动态。",
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
