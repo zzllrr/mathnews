@@ -55,14 +55,33 @@ const AppStorage = {
 // ==========================================
 // 🌐 网络请求智能路由适配器
 // ==========================================
+// ==========================================
+// 🌐 网络请求智能路由适配器 (含高可用自动降级备用机制)
+// ==========================================
 async function smartFetch(targetUrl, options = {}) {
     if (isExtension) {
         // 扩展环境下，直接请求，享受跨域特权
         return await fetch(targetUrl, options);
     } else {
-        // 手机网页环境下，自动拼接 Cloudflare 代理节点绕过跨域限制
+        // 手机网页环境下，首先尝试我们自己的 Cloudflare 代理
         const proxiedUrl = CORS_PROXY + encodeURIComponent(targetUrl);
-        return await fetch(proxiedUrl, options);
+        try {
+            const response = await fetch(proxiedUrl, options);
+            
+            // 如果返回 403 Forbidden 或其他严重错误，主动抛出异常触发备用路线
+            if (!response.ok && response.status === 403) {
+                throw new Error("Main proxy returned 403 Forbidden");
+            }
+            return response;
+            
+        } catch (error) {
+            console.warn(`[代理警告] 自建节点访问 ${targetUrl} 失败，正在自动切换备用公共代理节点...`, error);
+            
+            // 备用路线：使用高可用公共 CORS 代理 (corsproxy.io)
+            // 它的底层 IP 池更丰富，通常能绕过阻挡 Worker 的防火墙
+            const fallbackUrl = "https://corsproxy.io/?" + encodeURIComponent(targetUrl);
+            return await fetch(fallbackUrl, options);
+        }
     }
 }
 
