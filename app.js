@@ -58,29 +58,43 @@ const AppStorage = {
 // ==========================================
 // 🌐 网络请求智能路由适配器 (含高可用自动降级备用机制)
 // ==========================================
+// ==========================================
+// 🌐 网络请求智能路由适配器 (含多级高可用自动降级备用机制)
+// ==========================================
 async function smartFetch(targetUrl, options = {}) {
     if (isExtension) {
         // 扩展环境下，直接请求，享受跨域特权
         return await fetch(targetUrl, options);
     } else {
-        // 手机网页环境下，首先尝试我们自己的 Cloudflare 代理
+        // 路线 1：主代理 (Cloudflare Worker)
         const proxiedUrl = CORS_PROXY + encodeURIComponent(targetUrl);
         try {
             const response = await fetch(proxiedUrl, options);
-            
-            // 如果返回 403 Forbidden 或其他严重错误，主动抛出异常触发备用路线
-            if (!response.ok && response.status === 403) {
-                throw new Error("Main proxy returned 403 Forbidden");
+            // 主动拦截 WAF 的 403/502 状态码，触发降级机制
+            if (!response.ok && (response.status === 403 || response.status === 502 || response.status === 401)) {
+                throw new Error(`主代理节点遭遇防火墙拦截: ${response.status}`);
             }
             return response;
             
-        } catch (error) {
-            console.warn(`[代理警告] 自建节点访问 ${targetUrl} 失败，正在自动切换备用公共代理节点...`, error);
+        } catch (error1) {
+            console.warn(`[代理降级] 主节点失败，尝试路线 2 (AllOrigins API)...`, error1.message);
             
-            // 备用路线：使用高可用公共 CORS 代理 (corsproxy.io)
-            // 它的底层 IP 池更丰富，通常能绕过阻挡 Worker 的防火墙
-            const fallbackUrl = "https://corsproxy.io/?" + encodeURIComponent(targetUrl);
-            return await fetch(fallbackUrl, options);
+            // 路线 2：AllOrigins (底层 IP 架构不同，抗封锁和缓存穿透能力较强)
+            const fallbackUrl1 = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
+            try {
+                const res1 = await fetch(fallbackUrl1, options);
+                if (!res1.ok && (res1.status === 403 || res1.status === 502 || res1.status === 401)) {
+                    throw new Error(`路线 2 遭遇防火墙拦截: ${res1.status}`);
+                }
+                return res1;
+                
+            } catch (error2) {
+                console.warn(`[代理降级] 路线 2 失败，尝试路线 3 (CorsProxy)...`, error2.message);
+                
+                // 路线 3：CorsProxy.io (最终兜底策略)
+                const fallbackUrl2 = "https://corsproxy.io/?" + encodeURIComponent(targetUrl);
+                return await fetch(fallbackUrl2, options);
+            }
         }
     }
 }
