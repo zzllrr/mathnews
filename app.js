@@ -87,15 +87,20 @@ async function init() {
         
         try {
             document.getElementById('loading').style.display = 'block';
-            // 添加时间戳防止手机浏览器缓存旧的 json 文件
-            // 新代码：直接读取 GitHub 的 Raw 原始接口，实现 0 延迟秒级同步！
-            const rawUrl = `https://raw.githubusercontent.com/${githubConfig.repo}/main/${githubConfig.path}?t=${Date.now()}`;
+            
+            // 确保获取到配置中的仓库名，如果没有配置则提供一个容错默认值
+            const repoPath = githubConfig.repo || 'zzllrr/mathnews'; 
+            const filePath = githubConfig.path || 'news_data.json';
+            
+            // 使用精准的 GitHub Raw 文件绝对路径，加入时间戳彻底绕过缓存
+            const rawUrl = `https://raw.githubusercontent.com/${repoPath}/refs/heads/main/${filePath}?t=${Date.now()}`;
+            
             const cloudRes = await fetch(rawUrl);
             if (cloudRes.ok) {
                 localCache = await cloudRes.json();
                 document.getElementById('env-hint').innerText = "情报库已同步至最新版。";
             } else {
-                throw new Error("云端文件未找到");
+                throw new Error(`云端文件未找到，HTTP 状态码: ${cloudRes.status}`);
             }
         } catch(e) {
             console.warn("加载云端数据失败:", e);
