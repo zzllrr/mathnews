@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MathNews | 实时情报终端</title>
   <style>
     :root { --bg-color: #f5f7fa; --card-bg: #ffffff; --text-main: #333; --text-sub: #777; --accent: #2c3e50; --border: #e0e0e0; }
@@ -13,19 +14,19 @@
 
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; color: var(--text-main); }
     
-    header { border-bottom: 2px solid var(--accent); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+    header { border-bottom: 2px solid var(--accent); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px;}
     .header-left h1 { margin: 0; color: var(--accent); font-size: 28px; }
     .btn { background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-left: 10px; }
     .btn:hover { opacity: 0.9; }
     .btn-danger { background: #e74c3c; }
     .btn-update-all { background: #27ae60; }
+    .btn-sync { background: #8e44ad; font-weight: bold; } /* 同步按钮颜色 */
 
     .filter-bar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 15px; margin-bottom: 20px; background: var(--card-bg); padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .filter-group { display: flex; flex-direction: column; gap: 5px; }
     .filter-group label { font-size: 12px; font-weight: bold; color: var(--text-sub); }
     .filter-bar select, .filter-bar input[type="text"] { padding: 6px 10px; border: 1px solid var(--border); border-radius: 4px; outline: none; }
 
-    /* 隐藏无条目开关样式 */
     .checkbox-group { display: flex; align-items: center; gap: 5px; padding-bottom: 6px; cursor: pointer; }
     .checkbox-group input { cursor: pointer; width: 16px; height: 16px; margin: 0; }
     .checkbox-group span { font-size: 13px; font-weight: bold; color: var(--accent); }
@@ -44,7 +45,7 @@
     .source-tags { font-size: 11px; color: #e67e22; background: rgba(255,255,255,0.7); padding: 2px 6px; border-radius: 4px; margin-right: 4px; border: 1px solid #f39c12;}
     
     .action-group { display: flex; gap: 5px; margin-top: 2px; align-items: center; }
-    .action-btn { font-size: 12px; padding: 4px 8px; background: rgba(255,255,255,0.5); border-radius: 4px; cursor: pointer; }
+    .action-btn { font-size: 12px; padding: 4px 8px; background: rgba(255,255,255,0.5); border-radius: 4px; cursor: pointer; border: none;}
     
     .hover-actions { display: none; gap: 5px; }
     .source-header:hover .hover-actions { display: flex; }
@@ -89,8 +90,13 @@
     .preview-btn { background: #3498db; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; margin-left: auto; }
     .preview-btn:hover { background: #2980b9; }
 
+    .global-settings { background: #fdfdfd; padding: 10px 15px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #dcdde1; }
+    
+    /* GitHub 配置面板专属样式 */
+    .github-settings { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ccc; display: flex; flex-direction: column; gap: 8px;}
+    .github-settings input { padding: 6px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }
+
     .import-section { margin-top: 20px; padding-top: 15px; border-top: 2px dashed #ccc; display: flex; flex-direction: column; gap: 15px; }
-    .global-settings { background: #fdfdfd; padding: 10px 15px; border-radius: 6px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; border: 1px solid #dcdde1; }
 
     #preview-modal { z-index: 1050; }
     #preview-modal-content { max-width: 600px; }
@@ -107,12 +113,13 @@
   <header>
     <div class="header-left">
       <h1>MathNews | 实时情报</h1>
-      <p>本地缓存加载完毕，可手动按需更新数据</p>
+      <p id="env-hint">本地缓存加载完毕，可手动按需更新数据</p>
     </div>
-    <div>
-      <button class="btn btn-danger" id="clear-all-cache-btn">🗑️ 清空所有缓存</button>
-      <button class="btn btn-update-all" id="update-all-btn">🔄 更新全部</button>
-      <button class="btn" id="open-manage-btn" style="background: var(--accent);">⚙️ 管理配置</button>
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+      <button class="btn btn-danger extension-only" id="clear-all-cache-btn">🗑️ 清空缓存</button>
+      <button class="btn btn-update-all extension-only" id="update-all-btn">🔄 更新全部源</button>
+      <button class="btn btn-sync extension-only" id="sync-github-btn">☁️ 推送同步至 GitHub</button>
+      <button class="btn extension-only" id="open-manage-btn" style="background: var(--accent);">⚙️ 管理配置</button>
     </div>
   </header>
 
@@ -139,17 +146,15 @@
       <label>关键词</label>
       <input type="text" id="filter-keyword" placeholder="搜索标题...">
     </div>
-    <!-- 新增的开关：隐藏无条目的源 -->
     <label class="checkbox-group" style="margin-left: 10px;">
       <input type="checkbox" id="filter-hide-empty">
       <span>👁️ 隐藏无匹配条目的源</span>
     </label>
   </div>
 
-  <div id="loading">正在抓取新数据，这可能需要一点时间...</div>
+  <div id="loading">📡 系统处理中，请稍候...</div>
   <div class="news-columns" id="news-container"></div>
 
-  <!-- 主页快捷导航悬浮按钮 -->
   <div class="fixed-tools" id="main-tools">
     <button id="main-scroll-top" title="回到顶部">⬆️</button>
     <button id="main-scroll-bottom" title="直达底部">⬇️</button>
@@ -158,13 +163,24 @@
   <div class="modal-overlay" id="manage-modal">
     <div class="modal-content" id="manage-modal-content">
       <span class="modal-close" id="close-manage-btn">&times;</span>
-      <h2>新闻源与自定义抓取规则配置</h2>
+      <h2>⚙️ 新闻源与自定义规则配置</h2>
       
       <div class="global-settings">
-        <strong>⚙️ 全局设置:</strong>
-        <label style="font-size: 14px;">折叠前默认显示新闻条数: 
+        <strong>UI 全局设置:</strong>
+        <label style="font-size: 14px; margin-left: 10px;">折叠前默认显示新闻条数: 
           <input type="number" id="global-display-limit" value="1" min="1" style="width: 60px; padding: 4px; text-align: center; border: 1px solid #ccc; border-radius: 4px;">
         </label>
+        
+        <!-- 新增的 GitHub 推送配置区域 -->
+        <div class="github-settings">
+          <strong>☁️ GitHub 页面云同步配置 (用于手机端读取):</strong>
+          <div style="display: flex; gap: 10px;">
+            <input type="password" id="gh-token" placeholder="GitHub Personal Access Token (需 Repo 权限)" style="flex: 2;">
+            <input type="text" id="gh-repo" placeholder="仓库 (例如: zzllrr/mathnews)" style="flex: 1;">
+            <input type="text" id="gh-path" placeholder="保存路径 (默认: news_data.json)" value="news_data.json" style="flex: 1;">
+          </div>
+          <span style="font-size: 12px; color: #7f8c8d;">说明：配置后，点击主页的“推送同步”按钮，会自动将抓取好的数据文件上传到该仓库，供手机浏览器端读取静态文件。</span>
+        </div>
       </div>
 
       <div id="manage-list"></div>
@@ -196,7 +212,6 @@
         </div>
       </div>
       
-      <!-- 弹窗快捷导航悬浮按钮 -->
       <div class="fixed-tools modal-tools" id="modal-tools" style="display:none;">
         <button id="modal-scroll-top" title="回到顶部">⬆️</button>
         <button id="modal-scroll-bottom" title="直达底部">⬇️</button>
