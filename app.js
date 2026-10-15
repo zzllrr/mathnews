@@ -1,11 +1,6 @@
 // ==========================================
 // 🚀 全局配置与环境嗅探
 // ==========================================
-
-// 配置你的 Cloudflare Worker 代理地址 (仅在手机端网页模式下生效)
-// 注意：结尾必须保留 "?url="
-const CORS_PROXY = "https://mathnews.zzllrr.workers.dev/?url=";
-
 // 核心嗅探：判断当前是否运行在 Chrome 扩展环境中
 const isExtension = typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.id;
 
@@ -13,6 +8,7 @@ let globalSources = [];
 let localCache = {}; 
 let updateTimesCache = {}; 
 let globalDisplayLimit = 1; 
+let githubConfig = { token: '', repo: '', path: 'news_data.json' }; // 存储 GitHub 账户配置
 
 // ==========================================
 // 💾 数据存储适配器 (自动兼容扩展与网页)
@@ -52,79 +48,62 @@ const AppStorage = {
     }
 };
 
-// ==========================================
-// 🌐 网络请求智能路由适配器
-// ==========================================
-// ==========================================
-// 🌐 网络请求智能路由适配器 (含高可用自动降级备用机制)
-// ==========================================
-// ==========================================
-// 🌐 网络请求智能路由适配器 (含多级高可用自动降级备用机制)
-// ==========================================
-async function smartFetch(targetUrl, options = {}) {
-    if (isExtension) {
-        // 扩展环境下，直接请求，享受跨域特权
-        return await fetch(targetUrl, options);
-    } else {
-        // 路线 1：主代理 (Cloudflare Worker)
-        const proxiedUrl = CORS_PROXY + encodeURIComponent(targetUrl);
-        try {
-            const response = await fetch(proxiedUrl, options);
-            // 主动拦截 WAF 的 403/502 状态码，触发降级机制
-            if (!response.ok && (response.status === 403 || response.status === 502 || response.status === 401)) {
-                throw new Error(`主代理节点遭遇防火墙拦截: ${response.status}`);
-            }
-            return response;
-            
-        } catch (error1) {
-            console.warn(`[代理降级] 主节点失败，尝试路线 2 (AllOrigins API)...`, error1.message);
-            
-            // 路线 2：AllOrigins (底层 IP 架构不同，抗封锁和缓存穿透能力较强)
-            const fallbackUrl1 = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
-            try {
-                const res1 = await fetch(fallbackUrl1, options);
-                if (!res1.ok && (res1.status === 403 || res1.status === 502 || res1.status === 401)) {
-                    throw new Error(`路线 2 遭遇防火墙拦截: ${res1.status}`);
-                }
-                return res1;
-                
-            } catch (error2) {
-                console.warn(`[代理降级] 路线 2 失败，尝试路线 3 (CorsProxy)...`, error2.message);
-                
-                // 路线 3：CorsProxy.io (最终兜底策略)
-                const fallbackUrl2 = "https://corsproxy.io/?" + encodeURIComponent(targetUrl);
-                return await fetch(fallbackUrl2, options);
-            }
-        }
-    }
-}
-
-
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
   bindEvents();
   
   try {
-    // 智能获取配置文件路径
     const sourcesUrl = isExtension ? chrome.runtime.getURL('sources.json') : 'sources.json';
     const response = await fetch(sourcesUrl);
     const defaultSources = await response.json();
     
-    // 使用适配器读取数据
-    const result = await AppStorage.get(['customSources', 'mathNewsCache', 'updateTimesCache', 'displayLimit']);
+    // 读取持久化配置
+    const result = await AppStorage.get(['customSources', 'mathNewsCache', 'updateTimesCache', 'displayLimit', 'githubConfig']);
     
-    if (result.customSources && result.customSources.length > 0) {
-      globalSources = result.customSources;
-    } else {
-      globalSources = defaultSources;
-    }
+    if (result.customSources && result.customSources.length > 0) globalSources = result.customSources;
+    else globalSources = defaultSources;
 
-    if (result.mathNewsCache) localCache = result.mathNewsCache;
     if (result.updateTimesCache) updateTimesCache = result.updateTimesCache;
+    if (result.githubConfig) {
+        githubConfig = result.githubConfig;
+        document.getElementById('gh-token').value = githubConfig.token || '';
+        document.getElementById('gh-repo').value = githubConfig.repo || '';
+        document.getElementById('gh-path').value = githubConfig.path || 'news_data.json';
+    }
     
     globalDisplayLimit = result.displayLimit !== undefined ? result.displayLimit : 1;
     document.getElementById('global-display-limit').value = globalDisplayLimit;
+
+    // 🔥 核心双端分流逻辑
+    if (isExtension) {
+        // 在电脑 Chrome 扩展环境：允许抓取，读取本地缓存
+        if (result.mathNewsCache) localCache = result.mathNewsCache;
+        document.getElementById('env-hint').innerText = "本地爬虫引擎已就绪，请按需点击更新后推送至云端。";
+    } else {
+        // 在手机 Web/GitHub Pages 环境：只读模式，隐藏所有扩展专属按钮
+        document.querySelectorAll('.extension-only').forEach(el => el.style.display = 'none');
+        document.getElementById('env-hint').innerText = "移动端云同步模式：正在获取最新情报库...";
+        
+        try {
+            document.getElementById('loading').style.display = 'block';
+            // 添加时间戳防止手机浏览器缓存旧的 json 文件
+            // 新代码：直接读取 GitHub 的 Raw 原始接口，实现 0 延迟秒级同步！
+            const rawUrl = `https://raw.githubusercontent.com/${githubConfig.repo}/main/${githubConfig.path}?t=${Date.now()}`;
+            const cloudRes = await fetch(rawUrl);
+            if (cloudRes.ok) {
+                localCache = await cloudRes.json();
+                document.getElementById('env-hint').innerText = "情报库已同步至最新版。";
+            } else {
+                throw new Error("云端文件未找到");
+            }
+        } catch(e) {
+            console.warn("加载云端数据失败:", e);
+            document.getElementById('env-hint').innerText = "⚠️ 无法连接到云端仓库，请确认您已通过 PC 扩展执行了推送。";
+        } finally {
+            document.getElementById('loading').style.display = 'none';
+        }
+    }
     
     extractAndPopulateTags();
     renderNews();
@@ -139,15 +118,23 @@ function bindEvents() {
   document.getElementById('filter-tag').addEventListener('change', renderNews);
   document.getElementById('filter-keyword').addEventListener('input', renderNews);
   
-  // 隐藏无匹配条目的开关
   const hideEmptyCb = document.getElementById('filter-hide-empty');
   if (hideEmptyCb) hideEmptyCb.addEventListener('change', renderNews);
   
-  document.getElementById('update-all-btn').addEventListener('click', updateAllSources);
-  document.getElementById('clear-all-cache-btn').addEventListener('click', clearAllCaches);
+  // 扩展专用的操作绑定
+  const updateAllBtn = document.getElementById('update-all-btn');
+  if(updateAllBtn) updateAllBtn.addEventListener('click', updateAllSources);
   
-  document.getElementById('open-manage-btn').addEventListener('click', () => openManageModal());
+  const syncBtn = document.getElementById('sync-github-btn');
+  if(syncBtn) syncBtn.addEventListener('click', syncToGitHub);
+
+  const clearBtn = document.getElementById('clear-all-cache-btn');
+  if(clearBtn) clearBtn.addEventListener('click', clearAllCaches);
   
+  const manageBtn = document.getElementById('open-manage-btn');
+  if(manageBtn) manageBtn.addEventListener('click', () => openManageModal());
+  
+  // 弹窗关闭事件
   const manageModal = document.getElementById('manage-modal');
   document.getElementById('close-manage-btn').addEventListener('click', () => {
       manageModal.style.display = 'none';
@@ -168,16 +155,14 @@ function bindEvents() {
       if (e.target === this) this.style.display = 'none';
   });
   
-  // 悬浮按键事件
+  // 悬浮按键
   const mainScrollTop = document.getElementById('main-scroll-top');
   if (mainScrollTop) mainScrollTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
-  
   const mainScrollBottom = document.getElementById('main-scroll-bottom');
   if (mainScrollBottom) mainScrollBottom.addEventListener('click', () => window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}));
 
   const modalScrollTop = document.getElementById('modal-scroll-top');
   if (modalScrollTop) modalScrollTop.addEventListener('click', () => document.getElementById('manage-modal-content').scrollTo({top: 0, behavior: 'smooth'}));
-  
   const modalScrollBottom = document.getElementById('modal-scroll-bottom');
   if (modalScrollBottom) modalScrollBottom.addEventListener('click', () => {
       const modalContent = document.getElementById('manage-modal-content');
@@ -192,6 +177,80 @@ function bindEvents() {
   document.getElementById('import-json-input').addEventListener('change', handleJsonImport);
   document.getElementById('paste-json-btn').addEventListener('click', pasteJsonConfig);
   document.getElementById('reset-source-btn').addEventListener('click', resetSources);
+}
+
+// ==========================================
+// ☁️ GitHub 同步上传引擎
+// ==========================================
+async function syncToGitHub() {
+    if (!isExtension) return; // 仅 PC 端扩展可用
+    
+    // 获取最新配置
+    const token = githubConfig.token;
+    const repo = githubConfig.repo;
+    const path = githubConfig.path || 'news_data.json';
+    
+    if (!token || !repo) {
+        alert("⚠️ 推送中断：请先在“管理配置”中填写您的 GitHub Token 和 仓库名称！");
+        return openManageModal();
+    }
+
+    const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('loading').innerText = "☁️ 正在与 GitHub 建立连接并检查文件版本...";
+
+    try {
+        // 1. 获取目标文件当前的 SHA (GitHub 规定更新文件必须提供旧版本的 SHA)
+        let fileSha = "";
+        const getRes = await fetch(apiUrl, {
+            headers: { "Authorization": `token ${token}` }
+        });
+        
+        if (getRes.ok) {
+            const fileData = await getRes.json();
+            fileSha = fileData.sha;
+        } else if (getRes.status !== 404) {
+            throw new Error(`获取文件信息失败: ${getRes.statusText}`);
+        }
+
+        document.getElementById('loading').innerText = "📦 正在打包编译情报库并推送到云端...";
+
+        // 2. 将 localCache 转换为安全的 Base64 编码 (兼容中文字符)
+        const jsonString = JSON.stringify(localCache);
+        // 使用 btoa 和 encodeURIComponent 来安全处理 Unicode 中文
+        const contentBase64 = btoa(unescape(encodeURIComponent(jsonString)));
+
+        // 3. 构建提交请求体
+        const requestBody = {
+            message: `Auto Sync News Data via Extension - ${new Date().toLocaleString()}`,
+            content: contentBase64
+        };
+        if (fileSha) requestBody.sha = fileSha; // 如果文件已存在，附带 sha 表示更新操作
+
+        // 4. 执行上传 (PUT 请求)
+        const putRes = await fetch(apiUrl, {
+            method: "PUT",
+            headers: {
+                "Authorization": `token ${token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(requestBody)
+        });
+
+        if (putRes.ok) {
+            alert("✅ 数据已成功推送至 GitHub！\n现在您可以刷新您的手机端网页查看最新情报了。");
+        } else {
+            const errorInfo = await putRes.json();
+            throw new Error(errorInfo.message || "上传请求被拒绝");
+        }
+
+    } catch (error) {
+        console.error("GitHub 同步失败:", error);
+        alert(`❌ 同步失败: ${error.message}\n请检查您的 Token 权限或仓库名称是否正确。`);
+    } finally {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('loading').innerText = "📡 系统处理中，请稍候...";
+    }
 }
 
 function extractAndPopulateTags() {
@@ -317,6 +376,20 @@ function renderSourceGroup(source, items, container) {
   const hiddenItems = items.slice(limit);
   const hasHidden = hiddenItems.length > 0;
 
+  // 根据环境决定是否展示 "更新" "清空" "编辑" 等控制按钮
+  const hoverActionsHTML = isExtension ? `
+        <div class="hover-actions">
+            ${hasHidden ? `<button class="action-btn top-toggle-btn" title="展开/收起多余新闻">🔽</button>` : ''}
+            <button class="action-btn clear-source-btn" data-source="${source.name}" title="清除该源的本地缓存">🗑️</button>
+            <button class="action-btn edit-source-btn" data-source="${source.name}" title="修改抓取配置">⚙️</button>
+        </div>
+        <button class="action-btn update-source-btn" data-source="${source.name}" title="${updateTooltip}">🔄 更新</button>
+  ` : `
+        <div class="hover-actions">
+            ${hasHidden ? `<button class="action-btn top-toggle-btn" title="展开/收起多余新闻">🔽</button>` : ''}
+        </div>
+  `;
+
   groupDiv.innerHTML = `
     <div class="source-header">
       <div>
@@ -324,12 +397,7 @@ function renderSourceGroup(source, items, container) {
         <div style="margin-top:5px;">${tagsHTML}</div>
       </div>
       <div class="action-group">
-        <div class="hover-actions">
-            ${hasHidden ? `<button class="action-btn top-toggle-btn" title="展开/收起多余新闻">🔽</button>` : ''}
-            <button class="action-btn clear-source-btn" data-source="${source.name}" title="清除该源的本地缓存">🗑️</button>
-            <button class="action-btn edit-source-btn" data-source="${source.name}" title="修改抓取配置">⚙️</button>
-        </div>
-        <button class="action-btn update-source-btn" data-source="${source.name}" title="${updateTooltip}">🔄 更新</button>
+        ${hoverActionsHTML}
       </div>
     </div>
     <div class="items-container"></div>
@@ -379,9 +447,16 @@ function renderSourceGroup(source, items, container) {
     window.open(source.url, '_blank');
   });
 
-  groupDiv.querySelector('.update-source-btn').addEventListener('click', () => updateSingleSource(source));
-  groupDiv.querySelector('.clear-source-btn').addEventListener('click', () => clearSingleCache(source.name));
-  groupDiv.querySelector('.edit-source-btn').addEventListener('click', () => openManageModal(source.name));
+  if (isExtension) {
+      const uBtn = groupDiv.querySelector('.update-source-btn');
+      if(uBtn) uBtn.addEventListener('click', () => updateSingleSource(source));
+      
+      const cBtn = groupDiv.querySelector('.clear-source-btn');
+      if(cBtn) cBtn.addEventListener('click', () => clearSingleCache(source.name));
+      
+      const eBtn = groupDiv.querySelector('.edit-source-btn');
+      if(eBtn) eBtn.addEventListener('click', () => openManageModal(source.name));
+  }
   
   container.appendChild(groupDiv);
 }
@@ -410,10 +485,6 @@ function checkDate(timestamp, range) {
   }
   return true;
 }
-
-// ==========================================
-// 💾 数据更新与缓存控制 (通过 AppStorage 接管)
-// ==========================================
 
 function clearAllCaches() {
   if (!confirm('确定要清空所有新闻源的已抓取缓存吗？\n（不会影响您的新闻源规则配置）')) return;
@@ -796,13 +867,9 @@ function getFetchOptions(source) {
     return opts;
 }
 
-// ==========================================
-// 🚀 核心抓取引擎 (通过 smartFetch 自动适配网络环境)
-// ==========================================
-
 async function fetchJSON(source) {
     try {
-        const res = await smartFetch(source.url, getFetchOptions(source));
+        const res = await fetch(source.url, getFetchOptions(source));
         const data = await res.json();
         const rules = source.rules;
         const finalBaseUrl = res.url || source.url;
@@ -950,7 +1017,7 @@ async function fetchJSON(source) {
 
 async function fetchRSS(source) {
   try {
-    const res = await smartFetch(source.url, getFetchOptions(source));
+    const res = await fetch(source.url, getFetchOptions(source));
     const text = await res.text();
     const doc = new DOMParser().parseFromString(text, "text/xml");
     const finalBaseUrl = res.url || source.url;
@@ -998,7 +1065,7 @@ async function fetchRSS(source) {
 
 async function fetchHTML(source) {
   try {
-    const res = await smartFetch(source.url, getFetchOptions(source));
+    const res = await fetch(source.url, getFetchOptions(source));
     const htmlText = await res.text();
     const doc = new DOMParser().parseFromString(htmlText, "text/html");
     const rules = source.rules;
@@ -1112,6 +1179,7 @@ async function fetchHTML(source) {
 }
 
 async function updateSingleSource(source) {
+  if (!isExtension) return; // 云端模式禁止抓取操作
   document.getElementById('loading').style.display = 'block';
   let fetchedItems = [];
   
@@ -1148,6 +1216,7 @@ async function updateSingleSource(source) {
 }
 
 async function updateAllSources() {
+  if (!isExtension) return; // 云端模式禁止抓取操作
   const tagFilter = document.getElementById('filter-tag').value;
   const sourcesToUpdate = globalSources.filter(source => {
     if (tagFilter !== 'all' && (!source.tags || !source.tags.includes(tagFilter))) return false;
@@ -1168,7 +1237,7 @@ async function updateAllSources() {
 
 async function autoInferHTMLRules(source) {
     try {
-        const res = await smartFetch(source.url, getFetchOptions(source));
+        const res = await fetch(source.url, getFetchOptions(source));
         const htmlText = await res.text();
         const doc = new DOMParser().parseFromString(htmlText, "text/html");
         
@@ -1254,7 +1323,7 @@ async function autoInferHTMLRules(source) {
 
 async function autoInferJSONRules(source) {
     try {
-        const res = await smartFetch(source.url, getFetchOptions(source));
+        const res = await fetch(source.url, getFetchOptions(source));
         const data = await res.json();
         let arr = Array.isArray(data) ? data : null;
         let itemPath = '';
@@ -1590,7 +1659,18 @@ function collectSourcesFromUI() {
 function saveSourcesToLocal() {
   const newSources = collectSourcesFromUI();
   const limit = parseInt(document.getElementById('global-display-limit').value, 10) || 1;
-  AppStorage.set({ customSources: newSources, displayLimit: limit }).then(() => {
+  
+  const token = document.getElementById('gh-token').value.trim();
+  const repo = document.getElementById('gh-repo').value.trim();
+  const path = document.getElementById('gh-path').value.trim() || 'news_data.json';
+  
+  const newGithubConfig = { token, repo, path };
+
+  AppStorage.set({ 
+      customSources: newSources, 
+      displayLimit: limit,
+      githubConfig: newGithubConfig
+  }).then(() => {
     alert('设置已成功保存！'); location.reload(); 
   });
 }
@@ -1605,9 +1685,7 @@ function exportSources() {
 
 function resetSources() {
   if (!confirm('确定恢复为扩展初始默认配置吗？')) return;
-  AppStorage.remove(['customSources']).then(() => {
-     alert('已恢复默认配置！'); location.reload(); 
-  });
+  AppStorage.remove(['customSources']).then(() => { alert('已恢复默认配置！'); location.reload(); });
 }
 
 function handleJsonImport(event) {
